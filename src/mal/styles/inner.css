@@ -1,0 +1,92 @@
+@import './vendor.css';
+
+html[data-mal]:not([data-mal-page='home']) body::after {
+  display: none !important;
+}
+
+html[data-mal]:not([data-mal-page='home']),
+html[data-mal]:not([data-mal-page='home']) body {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  font-family: var(--font-primary), sans-serif;
+  cursor: auto;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-inner-root {
+  min-height: 100svh;
+  background-color: var(--site-bg, var(--color-bg-light));
+  color: var(--site-color, var(--color-primary));
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-header__logo img {
+  width: clamp(11.25rem, 14.583vw, 13.125rem);
+  height: auto;
+  display: block;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-header__nav-item--wip img {
+  width: calc(var(--s) * 6);
+  height: auto;
+  display: block;
+  transform: translateY(0.17rem);
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-footer__scroll-to-top img {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+html[data-mal]:not([data-mal-page='home']) .heading--hg {
+  font-size: var(--fs-hg);
+  line-height: var(--lh-hg);
+}
+
+html[data-mal]:not([data-mal-page='home']) .picture--loaded {
+  background: none !important;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-menu--open {
+  --pointer-events: all;
+  --opacity: 1;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-header {
+  --header-text-color: var(--color-primary);
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-header a {
+  color: var(--header-text-color);
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-header--menu-open {
+  --header-text-color: var(--color-primary-contrast);
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-footer {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-footer__intersection-ref {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .page-culture {
+  background-color: var(--color-bg-pink-light);
+}
+
+html[data-mal]:not([data-mal-page='home']) .list-article .article {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .mal-footer__bottom-start img {
+  width: 100%;
+  height: auto;
+}

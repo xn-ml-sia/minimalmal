@@ -1,0 +1,233 @@
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import { projects } from '../content';
+import { Contact } from '../Contact';
+import { Picture } from '../Picture';
+import { FigureStripes } from '../FigureStripes';
+
+export function ProjectPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const project = projects.find((p) => p.slug === slug);
+  const heroRef = useRef<HTMLElement>(null);
+  const carouselTrackRef = useRef<HTMLDivElement>(null);
+  const [carouselActive, setCarouselActive] = useState(0);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        document.documentElement.classList.toggle('mal-hero-visible', entry.isIntersecting);
+      },
+      { threshold: 0, rootMargin: '0px 0px -100% 0px' }
+    );
+    observer.observe(hero);
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove('mal-hero-visible');
+    };
+  }, []);
+
+  useEffect(() => {
+    const track = carouselTrackRef.current;
+    if (!track) return;
+    const onScroll = () => {
+      const width = track.clientWidth || 1;
+      setCarouselActive(Math.round(track.scrollLeft / width));
+    };
+    track.addEventListener('scroll', onScroll, { passive: true });
+    return () => track.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!project) return <Navigate to="/work" replace />;
+
+  const screenCarousel = 'screenCarousel' in project ? project.screenCarousel : [];
+
+  return (
+    <article className="page page-project mal-project">
+      <section
+        ref={heroRef}
+        className="hero-project"
+        style={{ '--color-project': '#0f0f0f', '--site-color': '#ffffff' } as CSSProperties}
+      >
+        <div className="hero-project__inner">
+          <h1 className="heading heading--xl hero-project__title">{project.name}</h1>
+          <div className="hero-project__client">
+            <p className="hero-project__client-heading">Client</p>
+            <p className="hero-project__client-value">{project.client}</p>
+          </div>
+          <div className="hero-project__figure">
+            <div className="hero-project__sector-year">
+              <span>{project.sector}</span>
+              <span>/ {project.year}</span>
+            </div>
+            <FigureStripes src={project.image} alt={project.name} />
+          </div>
+          <div className="hero-project__services-readtime">
+            <div className="hero-project__services">
+              <ul>
+                <li>{project.service}</li>
+                {project.tags.map((tag) => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="hero-project__readtime">
+              <p>{project.readTime} min</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="blocks blocks--ctx-project">
+        {project.featuredSections.map((section, i) => (
+          <div key={i}>
+            <div className="block block--safe-area block--bg-light block-featured-rich block-featured-rich--ctx-project">
+              <div className="block-featured-rich__inner">
+                <div className="block-featured-rich__featured">
+                  <p>{section.lead}</p>
+                </div>
+                <div className="block-featured-rich__rich-content">
+                  <div className="rich-content">
+                    <h2>{section.richTitle}</h2>
+                    {section.body.map((para, pi) => (
+                      <p key={pi}>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="block block-media block--bg-light block--safe-area block-media--cols-2 block-media--ctx-project block-media--expansion-wrapper">
+              {section.images.map((src, ii) => (
+                <div key={ii} className="media block-media__item">
+                  <Picture src={src} alt="" className="picture--cover picture--rounded" />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {screenCarousel.length > 0 && (
+          <div className="block block--safe-area block--bg-light block-screen-carousel">
+            <div className="block-screen-carousel__slider">
+              <div className="block-screen-carousel__track" ref={carouselTrackRef}>
+                {screenCarousel.map((src, i) => (
+                  <div key={i} className="block-screen-carousel__item">
+                    <Picture src={src} alt="" className="picture--cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="block-screen-carousel__nav">
+              {screenCarousel.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  className={`block-screen-carousel__nav-button${i === carouselActive ? ' block-screen-carousel__nav-button--active' : ''}`}
+                  onClick={() => {
+                    const target = carouselTrackRef.current?.children[i] as HTMLElement | undefined;
+                    target?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                  }}
+                  aria-label={`Go to screen ${i + 1}`}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {project.motionDemos.length > 0 && (
+          <div className="block block--safe-area block--bg-light block-motion-demos">
+            <div className="block-motion-demos__inner">
+              {project.motionDemos.map((demo, i) => (
+                <div key={i} className="block-motion-demos__item">
+                  <video
+                    className="block-motion-demos__video"
+                    src={demo.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                  <p className="block-motion-demos__label">{demo.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="block block-mockups block--has-background block-mockups--unique">
+          <div className="block-mockups__mockups">
+            <div className="slider slider-mockups slider--spv-auto">
+              <div className="swiper-wrapper">
+                {project.mockups.map((src, i) => (
+                  <div key={i} className="swiper-slide">
+                    <div className="block-mockups__mockup">
+                      <Picture src={src} alt="" className="picture--cover picture--rounded" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="block block--safe-area block--bg-light block-featured-rich block-featured-rich--ctx-project">
+          <div className="block-featured-rich__inner">
+            <div className="block-featured-rich__featured">
+              <p>{project.closingLead}</p>
+            </div>
+          </div>
+        </div>
+
+        {project.stats.length > 0 && (
+          <div className="block block--safe-area block--bg-light block-stats">
+            <div className="block-stats__inner">
+              <div className="block-stats__stats">
+                {project.stats.map((stat, i) => (
+                  <div key={i} className="block-stats__stat">
+                    <p className="block-stats__stat-name">{stat.name}</p>
+                    <p className="block-stats__stat-description">{stat.description}</p>
+                    <p className="block-stats__stat-value">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <section className="comp-credits">
+        <div className="comp-credits__inner">
+          <header className="comp-credits__header">
+            <h2 className="heading heading--md heading--dark heading--primary">Credits</h2>
+          </header>
+          <div className="comp-credits__start">
+            {project.credits.map((c) => (
+              <div key={c.role} className="comp-credits__group">
+                <div className="comp-credits__group-title">{c.role}</div>
+                <ul>
+                  <li>{c.name}</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="comp-credits__end">
+            {project.clientCredits.map((c) => (
+              <div key={c.role} className="comp-credits__group">
+                <div className="comp-credits__group-title">{c.role}</div>
+                <ul>
+                  <li>{c.name}</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Contact />
+    </article>
+  );
+}

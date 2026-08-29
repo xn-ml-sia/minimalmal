@@ -1,0 +1,22 @@
+html[data-mal][data-mal-page='home'] body::after {
+  display: none !important;
+}
+
+html[data-mal][data-mal-page='home'],
+html[data-mal][data-mal-page='home'] body {
+  background: #ffffff;
+  color: #0a0a0a;
+  cursor: auto;
+  overflow-x: hidden;
+}
+
+html[data-mal][data-mal-page='home'] .mal-home-root {
+  min-height: 100svh;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-family: Sneak, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.page-fade:not(.is-in) .mal-home-root * {
+  animation: none !important;
+}

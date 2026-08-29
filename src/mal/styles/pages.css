@@ -1,0 +1,163 @@
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle > span {
+  display: block;
+  white-space: nowrap;
+}
+
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle__slot {
+  position: relative;
+  display: inline-block;
+}
+
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle__space {
+  white-space: pre;
+}
+
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle__sizer {
+  visibility: hidden;
+}
+
+html[data-mal]:not([data-mal-page='home']) .split-text-shuffle__glyph {
+  position: absolute;
+  inset: 0;
+}
+
+html[data-mal]:not([data-mal-page='home']) .figure-stripes {
+  position: relative;
+}
+
+html[data-mal]:not([data-mal-page='home']) .figure-stripes__fragment .picture {
+  aspect-ratio: auto;
+}
+
+html[data-mal]:not([data-mal-page='home']) .figure-stripes__fragment .picture .picture__img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: cover;
+}
+
+html[data-mal]:not([data-mal-page='home']) .hero-work__video {
+  margin-top: 1.2em;
+}
+
+html[data-mal]:not([data-mal-page='home']) .hero-work .text-fractured__text {
+  font-size: var(--fs-hg);
+  line-height: var(--lh-hg);
+  letter-spacing: var(--ls-hg);
+  font-family: var(--font-primary);
+}
+
+html[data-mal]:not([data-mal-page='home']) .hero-services .text-fractured__text {
+  font-size: var(--fs-hg);
+  line-height: var(--lh-hg);
+  letter-spacing: var(--ls-hg);
+  font-family: var(--font-primary);
+}
+
+html[data-mal]:not([data-mal-page='home']) .filter-projects__options[hidden] {
+  display: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-track {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0 var(--safe-area);
+}
+
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-slide {
+  flex: 0 0 80vw;
+  scroll-snap-align: start;
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-slide .picture,
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-slide .figure-stripes {
+  aspect-ratio: 296 / 217;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+html[data-mal]:not([data-mal-page='home']) .article-service__projects-slide figcaption {
+  margin-top: 0.5em;
+  font-size: var(--fs-base);
+}
+
+html[data-mal]:not([data-mal-page='home']) .vision-slider {
+  overflow: hidden;
+}
+
+html[data-mal]:not([data-mal-page='home']) .vision-slider__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .vision-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+html[data-mal]:not([data-mal-page='home']) .vision-slider__track > * {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+html[data-mal]:not([data-mal-page='home']) .gallery-grid {
+  background-color: var(--color-bg-pink-light);
+}
+
+html[data-mal]:not([data-mal-page='home']) .gallery-grid__inner figure {
+  cursor: pointer;
+}
+
+html[data-mal]:not([data-mal-page='home']) .gallery-grid__inner figure .picture {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-mal]:not([data-mal-page='home']) .gallery-grid__inner figure:hover .picture {
+  transform: scale(1.04);
+}
+
+html[data-mal]:not([data-mal-page='home']) .list-table a.list-table__item {
+  text-decoration: none;
+  color: inherit;
+}
+
+html[data-mal][data-mal-page='about'] .mal-header {
+  --header-text-color: var(--color-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-mal]:not([data-mal-page='home']) .gallery-grid__inner figure .picture {
+    transition: none;
+  }
+
+  html[data-mal]:not([data-mal-page='home']) .gallery-grid__inner figure:hover .picture {
+    transform: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html[data-mal]:not([data-mal-page='home']) .article-service__projects-track {
+    padding: 0;
+  }
+
+  html[data-mal]:not([data-mal-page='home']) .article-service__projects-slide {
+    flex-basis: 22vw;
+  }
+}
