@@ -119,7 +119,7 @@
     m.addEventListener('mouseenter',function(){ hoverSlide=m; });
     m.addEventListener('mouseleave',function(){ if(hoverSlide===m) hoverSlide=null; }); });
   var charging=false, chT0=0, chx=0, chy=0;
-  addEventListener('pointerdown',function(e){ if(TOUCH) return; if(e.target.closest('a,button,input,.masthead,.pxctl')) return;
+  addEventListener('pointerdown',function(e){ if(TOUCH) return; if(e.target.closest('a,button,input,.masthead')) return;
     charging=true; chT0=performance.now()/1000; chx=e.clientX; chy=e.clientY; });                                /* hold to charge (pointer devices only) */
   function release(){ if(!charging) return; charging=false; var ns=performance.now()/1000, ch=Math.min((ns-chT0)/2.2,1);
     waves.push({x:chx,y:chy,t0:ns,pow:0.35+ch*2.1}); dep(chx,chy,1,BRUSH*(2.5+ch*18)); shake=0.45+ch*1.9;          /* slower ramp (2.2s to full); a quick tap is gentle, a long hold blows up */
@@ -175,7 +175,7 @@
   addEventListener('keydown',function(e){ var k=e.keyCode;
     if(k===KON[ki]){ ki++; if(ki===KON.length){ ki=0; fireWild(); } } else { ki=(k===KON[0])?1:0; }
     if(e.key&&e.key.length===1){ typed=(typed+e.key.toLowerCase()).slice(-6); if(typed.slice(-4)==='wild') fireWild(); else if(typed==='vienna') fireHeart(); } });
-  addEventListener('dblclick',function(e){ if(TOUCH) return; if(e.target.closest&&e.target.closest('a,button,input,.pxctl'))return; waves.push({x:e.clientX,y:e.clientY,t0:performance.now()/1000,pow:2.8}); dep(e.clientX,e.clientY,1,BRUSH*22); shake=2.4; });
+  addEventListener('dblclick',function(e){ if(TOUCH) return; if(e.target.closest&&e.target.closest('a,button,input'))return; waves.push({x:e.clientX,y:e.clientY,t0:performance.now()/1000,pow:2.8}); dep(e.clientX,e.clientY,1,BRUSH*22); shake=2.4; });
   function render(){ var tt=t*0.001, ns=performance.now()/1000;
     /* hero rect drives the headline + its safe zone */
     var hb=hero.getBoundingClientRect(); hrTop=hb.top; hrH=hb.height;
@@ -278,14 +278,6 @@
     render(); requestAnimationFrame(loop); }
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){ size(); });
   requestAnimationFrame(loop);
-
-  /* cell / brush size controls */
-  var pxctl=document.getElementById('pxctl');
-  if(pxctl){ pxctl.addEventListener('click', function(e){ var btn=e.target.closest('button'); if(!btn) return;
-    function pick(attr){ pxctl.querySelectorAll('button[data-'+attr+']').forEach(function(x){ x.classList.remove('on'); }); btn.classList.add('on'); }
-    if(btn.dataset.cell!=null){ cell=+btn.dataset.cell; size(); pick('cell'); }
-    else if(btn.dataset.brush!=null){ BRUSH=+btn.dataset.brush; pick('brush'); }
-  }); }
 })();
 
 /* ===== reveals ===== */
@@ -689,38 +681,6 @@
 })();
 
 
-/* fade the pixel controls away over the footer so they don't sit on top of it */
-(function(){ var px=document.querySelector('.pxctl'), ft=document.querySelector('footer');
-  if(!px||!ft||!('IntersectionObserver' in window)) return;
-  new IntersectionObserver(function(es){ es.forEach(function(e){ px.classList.toggle('hide', e.isIntersecting); }); }, {rootMargin:'0px 0px 320px 0px'}).observe(ft);
-})();
-/* which wild-er is nearest you, by IP */
-(function(){ var el=document.getElementById('nearest'); if(!el) return;
-  var TEAM=[
-    {who:'Jake, Matt and Claire', place:'Washington DC', lat:38.90, lng:-77.04},
-    {who:'Felix', place:'Los Angeles', lat:34.05, lng:-118.24},
-    {who:'Anton', place:'the UK', lat:51.51, lng:-0.13},
-    {who:'Monde', place:'South Africa', lat:-26.20, lng:28.04},
-    {who:'Eva and David', place:'Spain', lat:40.42, lng:-3.70},
-    {who:'Alex and Dom', place:'Italy', lat:41.90, lng:12.50},
-    {who:'Rag, Matthias and Litchy', place:'Vienna', lat:48.21, lng:16.37},
-    {who:'Leandro', place:'Argentina', lat:-34.60, lng:-58.38}
-  ];
-  function hav(a,b,c,d){ var R=6371,p=Math.PI/180; var s=Math.sin((c-a)*p/2), t=Math.sin((d-b)*p/2);
-    var h=s*s+Math.cos(a*p)*Math.cos(c*p)*t*t; return 2*R*Math.asin(Math.sqrt(h)); }
-  function show(lat,lng){ var best=null, bd=1/0;
-    for(var i=0;i<TEAM.length;i++){ var d=hav(lat,lng,TEAM[i].lat,TEAM[i].lng); if(d<bd){ bd=d; best=TEAM[i]; } }
-    if(!best) return; var plural=best.who.indexOf(' and ')>-1;
-    var dist=bd<60?'practically next door':('about '+(bd<1000?(Math.round(bd/10)*10):(Math.round(bd/100)*100)).toLocaleString()+' km away');
-    el.textContent='The nearest wildling'+(plural?'s are ':' is ')+best.who+' in '+best.place+', '+dist+'.';
-    el.style.display='';
-  }
-  try{ fetch('https://ipwho.is/').then(function(r){ return r.json(); }).then(function(j){
-    if(j&&typeof j.latitude==='number'&&typeof j.longitude==='number') show(j.latitude,j.longitude);
-  }).catch(function(){}); }catch(_){}
-})();
-
-
 /* carousel hover: the slide's own image/video crumbles into chunky pixels at the corners (top overlay, no trail) */
 (function(){
   if(!(window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches)) return;   /* pointer devices only */
@@ -906,11 +866,6 @@
     var ox=(Wc-(mx+1)*U)/2, oy=(Hc-(my+1)*U)/2; ctx.fillStyle=col; for(k=0;k<m.length;k++) ctx.fillRect(ox+m[k][0]*U, oy+m[k][1]*U, U-1, U-1); }
   draw(); setInterval(function(){ i++; draw(); }, 520);
 })();
-
-
-/* W logo: choppy 3D spin every ~10s (also spins on hover via CSS) */
-(function(){ var l=document.querySelector('.wlogo'); if(!l) return;
-  setInterval(function(){ l.classList.add('spin'); setTimeout(function(){ l.classList.remove('spin'); }, 860); }, 10000); })();
 
 
 /* Brand Context Protocol: one continuous "constellation" flow across all four stages.

@@ -62,6 +62,18 @@ export function MalShell() {
   }, [page]);
 
   useLayoutEffect(() => {
+    const { history } = window;
+    const previous = history.scrollRestoration;
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    const frame = requestAnimationFrame(() => window.scrollTo(0, 0));
+    return () => {
+      cancelAnimationFrame(frame);
+      history.scrollRestoration = previous;
+    };
+  }, [pathname]);
+
+  useLayoutEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;

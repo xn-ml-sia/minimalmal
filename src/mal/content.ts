@@ -25,34 +25,26 @@ export const work = {
     {
       name: 'Mezo Clay Design System',
       headline: 'Converting design debt into product infrastructure',
-      desc: 'Led Mezo design system migration across three product phases (legacy, testnet, mainnet); post-launch audit established 70% component integration and identified systemic overrides from premature styling as the primary implementation bottleneck, informing governance decisions. Managed a direct report and an engineering contributor from execution through deployment. Partnered with the contributing designer to set quality standards and pattern library conventions, building out Uber Base into a React, WCAG 2.2-compliant library purpose-built for the Thesis BitcoinFi suite. Managed, built, and tested 2,000+ variants across 50+ base components, establishing the single source of truth every product surface shipped: the infrastructure behind $322M in testnet deposits, 154K transactions, and $151M TVL at mainnet, peaking at $200M+.',
+      desc: 'Led Clay across three product phases — 2,000+ variants and the system behind $200M+ TVL.',
       image: '/images/portfolio/mock-thesis-systems.png',
-      service: 'systems',
-      sector: 'crypto',
     },
     {
       name: 'BlockFi Mobile',
       headline: 'Redefining mobile trading to drive 200%+ transaction volume in 90 days',
-      desc: 'BlockFi’s mobile trading experience was scoped too narrowly — USD denomination was the surface problem, but the deeper opportunity was rebuilding the entire flow around how users actually trade. As Director, I pushed back on the original brief using product benchmarking and heuristic evaluation, moving buy/sell intent before the amount screen to eliminate a segmented control that was adding cognitive load, making room for surfacing recurring trades earlier in the flow — previously buried at the summary screen. Both decisions were validated through user testing before implementation, and applied consistently across web and mobile. Trades grew 200%+ within 90 days of launch — outpacing web-based trades for the first time — and contributed directly to BlockFi’s growth in service of 225K+ clients.',
+      desc: 'Rebuilt the trading flow so intent came first. Mobile trades grew 200%+ in 90 days and outpaced web.',
       image: '/images/portfolio/gf-blockfi.jpg',
-      service: 'leadership',
-      sector: 'fintech',
     },
     {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
       headline: 'Scoping and shipping the mobile experience behind the world’s first Bitcoin rewards credit card',
-      desc: 'Performed as lead product designer for the world’s first Bitcoin rewards credit card — building the design system and implementing the native experience against a web version, reusing the same components across both to stave off design debt and create a unified cross-platform experience. Reached 50,000+ active cardholders within 90 days of national launch, spending 450% above the card industry average and pacing toward $2B+ in annualized volume (BlockFi, Oct 2021).',
-      image: '/images/portfolio/gf-blockfi.jpg',
-      service: 'leadership',
-      sector: 'fintech',
+      desc: 'Lead designer, mobile, for the world’s first Bitcoin rewards card — 50,000+ cardholders in 90 days.',
+      image: '/images/portfolio/blockfi-card-rewards.png',
     },
     {
       name: 'Zalando Stories',
       headline: 'One motion language for a platform built on a proven bet',
-      desc: 'Zalando’s majority stake in Highsnobiety had already proven the model — 80+ curated drops reaching 7M+ unique users before the platform had a name. Turning that into a permanent feature meant solving motion first: every editorial format needed transitions that felt consistent across app and web, and motion was still a pile of one-off files. Led a design-sprint week to define a platform-agnostic system — timing and easing as shared tokens, composed into a primitive set (sheet, enter/exit, press, swipe-up) any format could adopt instead of reinventing. Stories launched Sept 14, 2023 across 11 markets with five formats, and has scaled to 500+ stories and 700+ brands since.',
+      desc: 'A shared motion system — tokens and primitives — that launched Stories in 11 markets and scaled to 500+ pieces.',
       image: '/images/portfolio/gf-fennel.png',
-      service: 'systems',
-      sector: 'consumer',
     }
   ],
 } as const;
@@ -203,9 +195,6 @@ export const projects = [
     service: 'Systems',
     readTime: 4,
     image: '/images/portfolio/mock-thesis-systems.png',
-    headline: 'Converting design debt into product infrastructure',
-    intro:
-      'What starts as a styling override always becomes a system problem. At Mezo, three product phases — legacy, testnet, mainnet — had accumulated enough inconsistency to slow every team touching the product. The work was infrastructure first, interface second.',
     featuredSections: [
       {
         lead: 'A design system is only as good as the governance behind it.',
@@ -240,17 +229,28 @@ export const projects = [
       '/images/portfolio/mezo-hero.png',
       '/images/portfolio/mezo-wallet.png',
     ],
+    mediaBlocks: [
+      {
+        kind: 'cover',
+        background: '/images/portfolio/mock-thesis-systems.png',
+        overlay: { type: 'image', src: '/images/portfolio/mezo-hero.png' },
+      },
+      {
+        kind: 'split',
+        left: { type: 'image', src: '/images/portfolio/mezo-wallet.png' },
+        right: { type: 'image', src: '/images/portfolio/mezo-explore.png' },
+      },
+      {
+        kind: 'bleed',
+        media: { type: 'image', src: '/images/portfolio/mezo-hero.png' },
+      },
+    ],
     closingLead: 'Infrastructure that outlasts the sprint cycle is the difference between a design system and a component dump.',
     stats: [
       { name: 'Component integration', description: 'Post-launch audit established the baseline for system governance decisions.', value: '70%' },
       { name: 'TVL at mainnet peak', description: 'The system shipped with every product surface that contributed to Mezo growth.', value: '$200M+' },
       { name: 'Testnet deposits', description: 'Built on the infrastructure shipped during this engagement.', value: '$322M' },
       { name: 'Sprint completion', description: 'Maintained across the engagement from system build through deployment.', value: '98%' },
-    ],
-    tech: [
-      { k: 'Foundation', v: 'Uber Base → Mezo Clay' },
-      { k: 'Implementation', v: 'React + WCAG 2.2' },
-      { k: 'Scale', v: '2,000+ variants · 50+ components' },
     ],
     tags: ['Design systems', 'Lead', 'Crypto', 'WCAG 2.2', 'React', 'Component library'],
     credits: [
@@ -262,7 +262,6 @@ export const projects = [
       { role: 'Client', name: 'Mezo / Thesis' },
       { role: 'PM', name: 'Thesis product team' },
     ],
-    motionDemos: [],
   },
   {
     slug: 'blockfi-mobile',
@@ -273,9 +272,6 @@ export const projects = [
     service: 'Leadership',
     readTime: 4,
     image: '/images/portfolio/gf-blockfi.jpg',
-    headline: 'Redefining mobile trading to drive 200%+ transaction volume in 90 days',
-    intro:
-      "BlockFi's mobile trading had a surface problem and a structural one. USD denomination was the thing people complained about. The real issue was a flow built around what engineering found easiest to implement, not how traders actually think.",
     featuredSections: [
       {
         lead: 'Pushing back on the brief was the first design decision.',
@@ -297,16 +293,27 @@ export const projects = [
       },
     ],
     mockups: ['/images/portfolio/gf-blockfi.jpg', '/images/portfolio/mock-bbu.png', '/images/portfolio/gf-fennel.png'],
+    mediaBlocks: [
+      {
+        kind: 'cover',
+        background: '/images/portfolio/gf-blockfi.jpg',
+        overlay: { type: 'image', src: '/images/portfolio/mock-bbu.png' },
+      },
+      {
+        kind: 'split',
+        left: { type: 'image', src: '/images/portfolio/gf-blockfi.jpg' },
+        right: { type: 'image', src: '/images/portfolio/mock-bbu.png' },
+      },
+      {
+        kind: 'bleed',
+        media: { type: 'image', src: '/images/portfolio/gf-fennel.png' },
+      },
+    ],
     closingLead: 'The brief was too small. Pushing back on it was the design work.',
     stats: [
       { name: 'Trades in 90 days', description: 'Mobile outpaced web-based trades for the first time following launch.', value: '+200%' },
       { name: 'Monthly revenue', description: 'BlockFi revenue at time of engagement, grown in part through trading volume.', value: '$50M' },
       { name: 'Clients served', description: 'Active BlockFi users at time of mobile trading redesign launch.', value: '225K+' },
-    ],
-    tech: [
-      { k: 'Platform', v: 'iOS + Android + Web' },
-      { k: 'Method', v: 'Benchmarking · user testing' },
-      { k: 'Role', v: 'Director of Product Design' },
     ],
     tags: ['Lead', 'Fintech', 'Mobile', 'iOS', 'Android', 'Director'],
     credits: [
@@ -318,13 +325,8 @@ export const projects = [
       { role: 'Client', name: 'BlockFi' },
       { role: 'PM', name: 'BlockFi product team' },
     ],
-    motionDemos: [],
   },
   {
-    // TODO: gf-blockfi.jpg is a placeholder — same generic hero image already used by
-    // 'blockfi-mobile'. This entry needs its own card-specific mockups/photography once
-    // sourced (see open question in the scoping doc: is a dedicated BlockFi card Figma
-    // file already linked from the Work IA disclosure issue, or does it need locating?).
     slug: 'blockfi-rewards-card',
     name: 'BlockFi — Credit Card Rewards (Mobile)',
     client: 'BlockFi',
@@ -332,14 +334,7 @@ export const projects = [
     year: '2021',
     service: 'Leadership',
     readTime: 4,
-    image: '/images/portfolio/gf-blockfi.jpg',
-    // Placeholder frames, framed at the iPhone 17 Pro Max's screen ratio (1320x2868)
-    // pending real card screens — swap each src once sourced (see TODO above). Rendered
-    // as a body carousel (see ProjectPage.tsx), not in the hero.
-    screenCarousel: Array.from({ length: 12 }, () => '/images/portfolio/gf-blockfi.jpg'),
-    headline: 'Scoping and shipping the mobile experience behind the world’s first Bitcoin rewards credit card',
-    intro:
-      "BlockFi's Bitcoin Rewards Visa card wasn't a marketing bet — it was a product bet on a category no issuer had shipped: a credit card that paid rewards in Bitcoin instead of points or cashback. Before launch it had already pulled a waitlist of roughly 400,000 signups (Dec 2020–Jul 2021), which meant the mobile experience — enrollment, card management, and rewards tracking — had to hold up under real demand from day one, not iterate its way there.",
+    image: '/images/portfolio/blockfi-card-rewards.png',
     featuredSections: [
       {
         lead: 'Performed as lead product designer for the world’s first Bitcoin rewards credit card — owning the mobile surface: enrollment, card management, and rewards tracking.',
@@ -348,7 +343,10 @@ export const projects = [
           'Lead designer, mobile, for the BlockFi Rewards Card experience. The card launched nationally in mid-2021 on the Visa network, issued by Evolve Bank & Trust and powered by Deserve’s card platform, converting a ~400K-signup waitlist into an active cardholder base.',
           'Built the design system and implemented the native experience against a web version — the same components reused across both platforms rather than diverging.',
         ],
-        images: ['/images/portfolio/gf-blockfi.jpg'],
+        images: [
+          '/images/portfolio/blockfi-card-reader-1.png',
+          '/images/portfolio/blockfi-card-reader-2.png',
+        ],
       },
       {
         lead: '50,000+ active cardholders within 90 days of national launch, spending 450% above the card industry average and pacing toward $2B+ in annualized volume.',
@@ -357,10 +355,29 @@ export const projects = [
           'By December 2021, cardholders had grown past 70,000 — a secondary source (Shorty Awards), cited with lighter confidence than BlockFi’s own release above. Rewards distribution reached 120+ BTC (~$6.8M) as of October 12, 2021 (BlockFi, GlobeNewswire).',
           'That reuse staved off design debt and created a unified cross-platform experience — one system driving both native and web, not two drifting apart.',
         ],
-        images: ['/images/portfolio/gf-blockfi.jpg'],
+        images: [
+          '/images/portfolio/blockfi-basket-2.png',
+          '/images/portfolio/blockfi-basket-1.png',
+        ],
       },
     ],
-    mockups: ['/images/portfolio/gf-blockfi.jpg'],
+    mockups: [],
+    mediaBlocks: [
+      {
+        kind: 'cover',
+        background: '/images/portfolio/blockfi-bg-1.png',
+        overlay: { type: 'image', src: '/images/portfolio/blockfi-screen-1.png', device: true },
+      },
+      {
+        kind: 'cover',
+        background: '/images/portfolio/blockfi-bg-2.png',
+        overlays: [
+          { type: 'image', src: '/images/portfolio/blockfi-screen-3.png', device: true },
+          { type: 'image', src: '/images/portfolio/blockfi-screen-2.png', device: true },
+          { type: 'image', src: '/images/portfolio/blockfi-screen-4.png', device: true },
+        ],
+      },
+    ],
     closingLead:
       '“Crypto rewards programs are a compelling way to engage consumers in the crypto economy. We’re excited to see programs like the BlockFi Rewards Visa Card, which offer rewards that are relevant to the growing community of digital currency adopters.” — Forbes, Jul 6 2021',
     stats: [
@@ -369,11 +386,6 @@ export const projects = [
       { name: 'Average spend / cardholder', description: '~450% above the ~$5,000 Amex/Mastercard/Visa average (same BlockFi release).', value: '~$30,000/yr' },
       { name: 'Annualized spend pace', description: 'Pacing figure disclosed alongside the 90-day cardholder count (BlockFi, Oct 2021).', value: '$2B+' },
       { name: 'Rewards distributed', description: '≈$6.8M in BTC as of Oct 12, 2021 (BlockFi, GlobeNewswire).', value: '120+ BTC' },
-    ],
-    tech: [
-      { k: 'Platform', v: 'iOS + Android' },
-      { k: 'Network / issuer', v: 'Visa · Evolve Bank & Trust · Deserve' },
-      { k: 'Role', v: 'Lead Designer, Mobile' },
     ],
     tags: ['Lead', 'Fintech', 'Mobile', 'Credit Card', 'iOS', 'Android'],
     credits: [
@@ -385,7 +397,6 @@ export const projects = [
       { role: 'Client', name: 'BlockFi' },
       { role: 'PM', name: 'BlockFi product team' },
     ],
-    motionDemos: [],
   },
   {
     slug: 'zalando-stories',
@@ -396,9 +407,6 @@ export const projects = [
     service: 'Systems',
     readTime: 4,
     image: '/images/portfolio/gf-fennel.png',
-    headline: 'One motion language for a platform built on a proven bet',
-    intro:
-      "In 2022, Zalando took a majority stake in Highsnobiety, betting that editorial content — not just catalog browsing — could drive commerce at scale. The bet was already working: over 80 curated product drops run together had reached 7 million+ unique users before the platform even had a name. Stories was the next step — turning that into a permanent feature, not a one-off collaboration.",
     featuredSections: [
       {
         lead: 'The same gesture felt different depending on where you saw it.',
@@ -420,17 +428,28 @@ export const projects = [
       },
     ],
     mockups: ['/images/portfolio/gf-fennel.png', '/images/portfolio/project-02-loan.png', '/images/portfolio/project-04-marketplace.png'],
+    mediaBlocks: [
+      {
+        kind: 'cover',
+        background: '/images/portfolio/gf-fennel.png',
+        overlay: { type: 'video', src: '/videos/motion/easing-default.mp4' },
+      },
+      {
+        kind: 'split',
+        left: { type: 'image', src: '/images/portfolio/project-02-loan.png' },
+        right: { type: 'video', src: '/videos/motion/easing-out-cubic.mp4' },
+      },
+      {
+        kind: 'bleed',
+        media: { type: 'video', src: '/videos/motion/easing-linear.mp4' },
+      },
+    ],
     closingLead: 'Stories launched September 14, 2023, across 11 European markets with five recurring formats. The motion system is what let that scale to 500+ stories and 700+ brands without the consistency breaking — the difference between a one-off content experiment and a durable platform.',
     stats: [
       { name: 'Pre-launch reach', description: '80+ curated product drops with Highsnobiety, before Stories had a name.', value: '7M+ users' },
       { name: 'Launch markets', description: 'Austria, Belgium, Denmark, France, Germany, Italy, Netherlands, Spain, Sweden, Switzerland, UK — Sept 14, 2023.', value: '11' },
       { name: 'Formats at launch', description: 'Cover Story, Style Bible, Guest Edit, The Perfect X, Unpacked.', value: '5' },
       { name: 'Scaled to', description: 'Stories published since launch, per Zalando.', value: '500+' },
-    ],
-    tech: [
-      { k: 'Method', v: 'Design Sprint · token-first system design' },
-      { k: 'Deliverable', v: 'Timing tokens, motion primitives, DS contribution' },
-      { k: 'Source', v: 'corporate.zalando.com, Sept 14 2023' },
     ],
     tags: ['Systems', 'Consumer', 'Motion', 'Design Sprint'],
     credits: [
@@ -439,11 +458,6 @@ export const projects = [
     ],
     clientCredits: [
       { role: 'Client', name: 'Zalando' },
-    ],
-    motionDemos: [
-      { label: 'Default ease', src: '/videos/motion/easing-default.mp4' },
-      { label: 'Ease-out cubic', src: '/videos/motion/easing-out-cubic.mp4' },
-      { label: 'Linear', src: '/videos/motion/easing-linear.mp4' },
     ],
   }
 ] as const;

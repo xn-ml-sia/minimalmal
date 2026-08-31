@@ -30,17 +30,7 @@ html[data-mal]:not([data-mal-page='home']) .split-text-shuffle__glyph {
 
 html[data-mal]:not([data-mal-page='home']) .figure-stripes {
   position: relative;
-}
-
-html[data-mal]:not([data-mal-page='home']) .figure-stripes__fragment .picture {
-  aspect-ratio: auto;
-}
-
-html[data-mal]:not([data-mal-page='home']) .figure-stripes__fragment .picture .picture__img {
-  height: 100%;
-  width: auto;
-  max-width: none;
-  object-fit: cover;
+  overflow: hidden;
 }
 
 html[data-mal]:not([data-mal-page='home']) .hero-work__video {

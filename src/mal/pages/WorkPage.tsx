@@ -47,10 +47,7 @@ export function WorkPage() {
                 <FigureStripes src={item.image} alt={item.name} className="article__figure" />
                 <header>
                   <h2 className="heading heading--md article__heading">{item.name}</h2>
-                  <p className="article__description">
-                    <strong>{item.headline}. </strong>
-                    {item.desc}
-                  </p>
+                  <p className="article__description">{item.desc}</p>
                 </header>
               </>
             );
