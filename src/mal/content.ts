@@ -344,8 +344,14 @@ export const projects = [
           'Built the design system and implemented the native experience against a web version — the same components reused across both platforms rather than diverging.',
         ],
         images: [
-          '/images/portfolio/blockfi-card-reader-1.png',
-          '/images/portfolio/blockfi-card-reader-2.png',
+          {
+            src: '/images/portfolio/blockfi-card-reader-1.png',
+            overlay: '/images/portfolio/blockfi-screen-2.png',
+          },
+          {
+            src: '/images/portfolio/blockfi-card-reader-2.png',
+            overlay: '/images/portfolio/blockfi-screen-3.png',
+          },
         ],
       },
       {
@@ -356,8 +362,14 @@ export const projects = [
           'That reuse staved off design debt and created a unified cross-platform experience — one system driving both native and web, not two drifting apart.',
         ],
         images: [
-          '/images/portfolio/blockfi-basket-2.png',
-          '/images/portfolio/blockfi-basket-1.png',
+          {
+            src: '/images/portfolio/blockfi-basket-2.png',
+            overlay: '/images/portfolio/blockfi-screen-5.png',
+          },
+          {
+            src: '/images/portfolio/blockfi-basket-1.png',
+            overlay: '/images/portfolio/blockfi-screen-4.png',
+          },
         ],
       },
     ],
