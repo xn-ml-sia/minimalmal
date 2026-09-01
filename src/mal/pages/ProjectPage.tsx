@@ -99,7 +99,9 @@ export function ProjectPage() {
             </div>
 
             {section.images.length > 0 && (
-              <div className="block block-media block--bg-light block--safe-area block-media--cols-2 block-media--ctx-project block-media--expansion-wrapper">
+              <div
+                className={`block block-media block--bg-light block--safe-area block-media--cols-${section.images.length === 3 ? 3 : 2} block-media--ctx-project block-media--expansion-wrapper`}
+              >
                 {section.images.map((item, ii) => {
                   const src = typeof item === 'string' ? item : item.src;
                   const overlay = typeof item === 'string' ? undefined : item.overlay;
@@ -111,7 +113,11 @@ export function ProjectPage() {
                       <Picture src={src} alt="" className="picture--cover picture--rounded" />
                       {overlay && (
                         <div className="block-media__overlay">
-                          <Picture src={overlay} alt="" />
+                          {/\.(webm|mp4)$/i.test(overlay) ? (
+                            <ProjectMedia type="video" src={overlay} />
+                          ) : (
+                            <Picture src={overlay} alt="" />
+                          )}
                         </div>
                       )}
                     </div>

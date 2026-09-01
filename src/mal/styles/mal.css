@@ -868,33 +868,64 @@ html[data-mal] .block-media.block-media--ctx-project.block-media--cols-2 {
   }
 }
 
+html[data-mal] .block-media--cols-3 {
+  --item-grid-column: span var(--cols);
+  --block-media-aspect-ratio: 1;
+}
+
+@media screen and (min-width: 768px) {
+  html[data-mal] .block-media--cols-3,
+  html[data-mal] .block-media.block-media--ctx-project.block-media--cols-3 {
+    --item-grid-column: span 4;
+  }
+}
+
 html[data-mal] .block-media__item--overlay {
   position: relative;
   overflow: hidden;
+  container-type: inline-size;
 }
 
 html[data-mal] .block-media__overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 9%;
+  padding: 0;
   pointer-events: none;
 }
 
-html[data-mal] .block-media__overlay .picture {
-  width: auto;
-  height: 78%;
+html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay .picture,
+html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay .project-media__video {
+  width: 56cqw;
+  height: auto;
+  max-height: none;
+  flex: none;
   aspect-ratio: 1022 / 1884;
   background: none;
   border-radius: 0;
 }
 
-html[data-mal] .block-media__overlay .picture img {
+html[data-mal]:not([data-mal-page='home']) .block-media.block-media--cols-3 .block-media__item .block-media__overlay .picture,
+html[data-mal]:not([data-mal-page='home']) .block-media.block-media--cols-3 .block-media__item .block-media__overlay .project-media__video {
+  width: 56cqw;
+}
+
+html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay .picture img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay .project-media__video {
+  object-fit: contain;
+}
+
+html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay img[src$='blockfi-screen-3.png'] {
+  transform: scale(0.95);
+  transform-origin: center center;
 }
 
 /* ── Block Mockups (full-bleed) ─────────────────────────── */
@@ -986,7 +1017,8 @@ html[data-mal] .block-media-cover--device .block-media-cover__inset {
   padding: 4.5% 0;
 }
 
-html[data-mal] .block-media-cover--device .block-media-cover__inset .picture {
+html[data-mal] .block-media-cover--device .block-media-cover__inset .picture,
+html[data-mal] .block-media-cover--device .block-media-cover__inset .project-media__video {
   width: auto;
   height: 86%;
   max-height: 46rem;
@@ -1002,14 +1034,37 @@ html[data-mal] .block-media-cover--device .block-media-cover__inset .picture img
   object-fit: contain;
 }
 
+html[data-mal] .block-media-cover--device .block-media-cover__inset .project-media__video {
+  object-fit: contain;
+}
+
 html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(2)) {
   gap: clamp(0.5rem, 1.6vw, 1.75rem);
   padding-inline: 4%;
 }
 
-html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(2)) .picture {
-  height: 70%;
-  max-height: 34rem;
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(2)) .picture,
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(2)) .project-media__video {
+  height: 86%;
+  max-height: 46rem;
+}
+
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(3)) > .picture,
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(3)) > .project-media__video {
+  height: 66%;
+  max-height: 32rem;
+}
+
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(3)) > .picture:nth-child(2),
+html[data-mal] .block-media-cover--device .block-media-cover__inset:has(> :nth-child(3)) > .project-media__video:nth-child(2) {
+  height: 76%;
+  max-height: 36rem;
+}
+
+html[data-mal] .block-media-cover--device .block-media-cover__inset img[src$='blockfi-screen-3.png'],
+html[data-mal] .block-media-cover--device .block-media-cover__inset img[src$='blockfi-screen-5.png'] {
+  transform: scale(0.95);
+  transform-origin: center center;
 }
 
 html[data-mal] .block-media-split {
