@@ -434,7 +434,20 @@ export const projects = [
           'Getting there meant solving a less glamorous problem first. Every editorial format — a cover story, a style guide, a guest edit — needed transitions that felt consistent whether someone hit them on the app or the web. Motion was still a pile of individual files; the same gesture read differently depending on where you encountered it.',
           'An eight-step sprint opened by naming that fragmentation, then mapped every existing motion instance across the product before setting a bar for what a shared system would need to cover.',
         ],
-        images: ['/images/portfolio/project-02-loan.png', '/images/portfolio/project-03-wallet.png'],
+        images: [
+          {
+            src: '/images/portfolio/cap.png',
+            overlay: '/images/portfolio/blockfi-screen-2.webm',
+          },
+          {
+            src: '/images/portfolio/glass.png',
+            overlay: '/images/portfolio/blockfi-screen-3.png',
+          },
+          {
+            src: '/images/portfolio/heart.png',
+            overlay: '/images/portfolio/blockfi-screen-1.webm',
+          },
+        ],
       },
       {
         lead: 'Timing tokens, then a short list of primitives that compose into any format.',
@@ -443,24 +456,36 @@ export const projects = [
           'What shipped: tokens defining raw timing and easing, primitives — sheet, enter/exit, press, swipe-up — defining reusable interaction patterns built from those tokens, and patterns combining primitives into on-screen behaviors editors and engineers could reach for without re-deriving anything. Swipe-up, the gesture that opens a Story full-screen, became the reference example: specified once, used everywhere a story needed to expand.',
           'Design and engineering stopped trading animation files. A new format now borrows motion from the token layer instead of inventing its own.',
         ],
-        images: ['/images/portfolio/project-04-marketplace.png', '/images/portfolio/project-after-coinbase.png'],
+        images: [
+          {
+            src: '/images/portfolio/shoes.png',
+            overlay: '/images/portfolio/blockfi-screen-5.png',
+          },
+          {
+            src: '/images/portfolio/socks.png',
+            overlay: '/images/portfolio/blockfi-screen-4.png',
+          },
+        ],
       },
     ],
-    mockups: ['/images/portfolio/gf-fennel.png', '/images/portfolio/project-02-loan.png', '/images/portfolio/project-04-marketplace.png'],
+    mockups: [],
     mediaBlocks: [
       {
         kind: 'cover',
-        background: '/images/portfolio/gf-fennel.png',
-        overlay: { type: 'video', src: '/videos/motion/easing-default.mp4' },
+        background: '/images/portfolio/jacket.png',
+        overlays: [
+          { type: 'video', src: '/images/portfolio/blockfi-screen-1.webm', device: true },
+          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
+        ],
       },
       {
-        kind: 'split',
-        left: { type: 'image', src: '/images/portfolio/project-02-loan.png' },
-        right: { type: 'video', src: '/videos/motion/easing-out-cubic.mp4' },
-      },
-      {
-        kind: 'bleed',
-        media: { type: 'video', src: '/videos/motion/easing-linear.mp4' },
+        kind: 'cover',
+        background: '/images/portfolio/tabi.png',
+        overlays: [
+          { type: 'image', src: '/images/portfolio/blockfi-screen-3.png', device: true },
+          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
+          { type: 'image', src: '/images/portfolio/blockfi-screen-4.png', device: true },
+        ],
       },
     ],
     closingLead: 'Stories launched September 14, 2023, across 11 European markets with five recurring formats. The motion system is what let that scale to 500+ stories and 700+ brands without the consistency breaking — the difference between a one-off content experiment and a durable platform.',
