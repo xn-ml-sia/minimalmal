@@ -44,7 +44,7 @@ export const work = {
       name: 'Zalando Stories',
       headline: 'One motion language for a platform built on a proven bet',
       desc: 'A shared motion system — tokens and primitives — that launched Stories in 11 markets and scaled to 500+ pieces.',
-      image: '/images/portfolio/gf-fennel.png',
+      image: '/images/portfolio/zalando-main.png',
     }
   ],
 } as const;
@@ -425,7 +425,7 @@ export const projects = [
     year: '2023',
     service: 'Systems',
     readTime: 4,
-    image: '/images/portfolio/gf-fennel.png',
+    image: '/images/portfolio/zalando-main.png',
     featuredSections: [
       {
         lead: 'The same gesture felt different depending on where you saw it.',
@@ -437,15 +437,15 @@ export const projects = [
         images: [
           {
             src: '/images/portfolio/cap.png',
-            overlay: '/images/portfolio/blockfi-screen-2.webm',
+            overlay: '/images/portfolio/z-screen-1.png',
           },
           {
             src: '/images/portfolio/glass.png',
-            overlay: '/images/portfolio/blockfi-screen-3.png',
+            overlay: '/images/portfolio/z-carousel.webm',
           },
           {
             src: '/images/portfolio/heart.png',
-            overlay: '/images/portfolio/blockfi-screen-1.webm',
+            overlay: '/images/portfolio/z-screen-2.png',
           },
         ],
       },
@@ -459,11 +459,11 @@ export const projects = [
         images: [
           {
             src: '/images/portfolio/shoes.png',
-            overlay: '/images/portfolio/blockfi-screen-5.png',
+            overlay: '/images/portfolio/z-stacked.webm',
           },
           {
             src: '/images/portfolio/socks.png',
-            overlay: '/images/portfolio/blockfi-screen-4.png',
+            overlay: '/images/portfolio/z-screen-4.png',
           },
         ],
       },
@@ -474,17 +474,17 @@ export const projects = [
         kind: 'cover',
         background: '/images/portfolio/jacket.png',
         overlays: [
-          { type: 'video', src: '/images/portfolio/blockfi-screen-1.webm', device: true },
-          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
+          { type: 'video', src: '/images/portfolio/z-carousel.webm', device: true },
+          { type: 'video', src: '/images/portfolio/z-stacked.webm', device: true },
         ],
       },
       {
         kind: 'cover',
         background: '/images/portfolio/tabi.png',
         overlays: [
-          { type: 'image', src: '/images/portfolio/blockfi-screen-3.png', device: true },
-          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
-          { type: 'image', src: '/images/portfolio/blockfi-screen-4.png', device: true },
+          { type: 'image', src: '/images/portfolio/z-screen-5.png', device: true },
+          { type: 'video', src: '/images/portfolio/z-stacked.webm', device: true },
+          { type: 'image', src: '/images/portfolio/z-screen-6.png', device: true },
         ],
       },
     ],
