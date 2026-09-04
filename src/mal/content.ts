@@ -463,7 +463,7 @@ export const projects = [
           },
           {
             src: '/images/portfolio/socks.png',
-            overlay: '/images/portfolio/z-screen-4.png',
+            overlay: '/images/portfolio/z-preview-press.webm',
           },
         ],
       },
@@ -482,7 +482,7 @@ export const projects = [
         kind: 'cover',
         background: '/images/portfolio/tabi.png',
         overlays: [
-          { type: 'image', src: '/images/portfolio/z-screen-5.png', device: true },
+          { type: 'video', src: '/images/portfolio/z-share-sheet.webm', device: true },
           { type: 'video', src: '/images/portfolio/z-stacked.webm', device: true },
           { type: 'image', src: '/images/portfolio/z-screen-6.png', device: true },
         ],
