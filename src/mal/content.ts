@@ -437,7 +437,7 @@ export const projects = [
         images: [
           {
             src: '/images/portfolio/cap.png',
-            overlay: '/images/portfolio/z-screen-1.png',
+            overlay: '/images/portfolio/z-quote-enter.webm',
           },
           {
             src: '/images/portfolio/glass.png',
