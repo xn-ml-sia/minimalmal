@@ -475,7 +475,7 @@ export const projects = [
         background: '/images/portfolio/jacket.png',
         overlays: [
           { type: 'video', src: '/images/portfolio/z-carousel.webm', device: true },
-          { type: 'video', src: '/images/portfolio/z-stacked.webm', device: true },
+          { type: 'video', src: '/images/portfolio/z-story-sheet.webm', device: true },
         ],
       },
       {
