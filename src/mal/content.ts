@@ -445,7 +445,7 @@ export const projects = [
           },
           {
             src: '/images/portfolio/heart.png',
-            overlay: '/images/portfolio/z-screen-2.png',
+            overlay: '/images/portfolio/z-layer-blur.webm',
           },
         ],
       },
@@ -484,7 +484,7 @@ export const projects = [
         overlays: [
           { type: 'video', src: '/images/portfolio/z-share-sheet.webm', device: true },
           { type: 'video', src: '/images/portfolio/z-stacked.webm', device: true },
-          { type: 'image', src: '/images/portfolio/z-screen-6.png', device: true },
+          { type: 'video', src: '/images/portfolio/z-story-peak.webm', device: true },
         ],
       },
     ],
