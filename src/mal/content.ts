@@ -29,12 +29,6 @@ export const work = {
       image: '/images/portfolio/mock-thesis-systems.png',
     },
     {
-      name: 'BlockFi Mobile',
-      headline: 'Redefining mobile trading to drive 200%+ transaction volume in 90 days',
-      desc: 'Rebuilt the trading flow so intent came first. Mobile trades grew 200%+ in 90 days and outpaced web.',
-      image: '/images/portfolio/gf-blockfi.jpg',
-    },
-    {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
       headline: 'Scoping and shipping the mobile experience behind the world’s first Bitcoin rewards credit card',
       desc: 'Lead designer, mobile, for the world’s first Bitcoin rewards card — 50,000+ cardholders in 90 days.',
@@ -203,7 +197,20 @@ export const projects = [
           "Led the full migration to Mezo Clay — partnering with Uber Base as the foundation and building a WCAG 2.2-compliant React library purpose-built for the Thesis BitcoinFi suite. Managed a direct report and an engineering contributor from execution through deployment.",
           "The post-launch audit identified premature styling as the primary implementation bottleneck — a pattern that shows up in every fast-moving crypto team. The fix wasn't more components; it was clearer rules about when to override them.",
         ],
-        images: ['/images/portfolio/mock-thesis-systems.png', '/images/portfolio/mezo-hero.png'],
+        images: [
+          {
+            src: '/images/portfolio/blockfi-card-reader-1.png',
+            overlay: '/images/portfolio/blockfi-screen-2.webm',
+          },
+          {
+            src: '/images/portfolio/lock.png',
+            overlay: '/images/portfolio/blockfi-screen-3.png',
+          },
+          {
+            src: '/images/portfolio/bank.png',
+            overlay: '/images/portfolio/blockfi-screen-1.webm',
+          },
+        ],
       },
       {
         lead: '2,000+ variants. 50+ base components. One source of truth.',
@@ -212,7 +219,16 @@ export const projects = [
           "Partnered with the contributing designer to set quality standards and pattern library conventions. Built and tested every variant against the Mezo product surfaces — deposit, borrow, wallet, explore — so each could ship without a separate design review cycle.",
           "The system became the infrastructure behind $322M in testnet deposits, 154K transactions, and $151M TVL at mainnet, peaking at $200M+.",
         ],
-        images: ['/images/portfolio/mezo-wallet.png', '/images/portfolio/mezo-explore.png', '/images/portfolio/mezo-borrow.png'],
+        images: [
+          {
+            src: '/images/portfolio/chart.png',
+            overlay: '/images/portfolio/blockfi-screen-5.png',
+          },
+          {
+            src: '/images/portfolio/blockfi-basket-1.png',
+            overlay: '/images/portfolio/blockfi-screen-4.png',
+          },
+        ],
       },
       {
         lead: 'Design debt compounds silently until it stops shipping features.',
@@ -221,28 +237,27 @@ export const projects = [
           "A 70% component integration rate at post-launch audit sounds like success. It is — but the 30% that wasn't integrated told the real story: premature styling decisions made during testnet were being maintained as one-off overrides instead of being resolved back into the system.",
           "The governance decisions informed by that audit — when to override, when to extend, when to propose a new component — were as important as the components themselves.",
         ],
-        images: ['/images/portfolio/mock-thesis-systems.png', '/images/portfolio/mezo-borrow.png'],
+        images: [],
       },
     ],
-    mockups: [
-      '/images/portfolio/mock-thesis-systems.png',
-      '/images/portfolio/mezo-hero.png',
-      '/images/portfolio/mezo-wallet.png',
-    ],
+    mockups: [],
     mediaBlocks: [
       {
         kind: 'cover',
-        background: '/images/portfolio/mock-thesis-systems.png',
-        overlay: { type: 'image', src: '/images/portfolio/mezo-hero.png' },
+        background: '/images/portfolio/blockfi-bg-1.png',
+        overlays: [
+          { type: 'video', src: '/images/portfolio/blockfi-screen-1.webm', device: true },
+          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
+        ],
       },
       {
-        kind: 'split',
-        left: { type: 'image', src: '/images/portfolio/mezo-wallet.png' },
-        right: { type: 'image', src: '/images/portfolio/mezo-explore.png' },
-      },
-      {
-        kind: 'bleed',
-        media: { type: 'image', src: '/images/portfolio/mezo-hero.png' },
+        kind: 'cover',
+        background: '/images/portfolio/blockfi-bg-2.png',
+        overlays: [
+          { type: 'image', src: '/images/portfolio/blockfi-screen-3.png', device: true },
+          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
+          { type: 'image', src: '/images/portfolio/blockfi-screen-4.png', device: true },
+        ],
       },
     ],
     closingLead: 'Infrastructure that outlasts the sprint cycle is the difference between a design system and a component dump.',
