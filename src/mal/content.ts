@@ -26,7 +26,7 @@ export const work = {
       name: 'Mezo Clay Design System',
       headline: 'Converting design debt into product infrastructure',
       desc: 'Led Clay across three product phases — 2,000+ variants and the system behind $200M+ TVL.',
-      image: '/images/portfolio/mock-thesis-systems.png',
+      image: '/images/portfolio/boy.png',
     },
     {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
@@ -188,7 +188,7 @@ export const projects = [
     year: '2023',
     service: 'Systems',
     readTime: 4,
-    image: '/images/portfolio/mock-thesis-systems.png',
+    image: '/images/portfolio/boy.png',
     featuredSections: [
       {
         lead: 'A design system is only as good as the governance behind it.',
