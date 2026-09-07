@@ -199,15 +199,15 @@ export const projects = [
         ],
         images: [
           {
-            src: '/images/portfolio/blockfi-card-reader-1.png',
+            src: '/images/portfolio/pie.png',
             overlay: '/images/portfolio/blockfi-screen-2.webm',
           },
           {
-            src: '/images/portfolio/lock.png',
+            src: '/images/portfolio/pie2.png',
             overlay: '/images/portfolio/blockfi-screen-3.png',
           },
           {
-            src: '/images/portfolio/bank.png',
+            src: '/images/portfolio/radar.png',
             overlay: '/images/portfolio/blockfi-screen-1.webm',
           },
         ],
@@ -221,11 +221,11 @@ export const projects = [
         ],
         images: [
           {
-            src: '/images/portfolio/chart.png',
+            src: '/images/portfolio/wave.png',
             overlay: '/images/portfolio/blockfi-screen-5.png',
           },
           {
-            src: '/images/portfolio/blockfi-basket-1.png',
+            src: '/images/portfolio/world.png',
             overlay: '/images/portfolio/blockfi-screen-4.png',
           },
         ],
@@ -244,7 +244,7 @@ export const projects = [
     mediaBlocks: [
       {
         kind: 'cover',
-        background: '/images/portfolio/blockfi-bg-1.png',
+        background: '/images/portfolio/star.png',
         overlays: [
           { type: 'video', src: '/images/portfolio/blockfi-screen-1.webm', device: true },
           { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
