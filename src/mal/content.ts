@@ -138,7 +138,7 @@ export const about = {
     },
     {
       name: 'Validate',
-      copy: 'Validation can occur at multiple touchpoints with an array of artifacts, ensuring the work addresses the needs of users — and, inevitably, the business.',
+      copy: 'Validation can occur at multiple touchpoints with an array of artifacts, ensuring the work addresses the needs of users — and, ultimately, the business.',
       image: '/images/process/agency-06-c2c1790069.webp',
       methods: [
         'Card sorting',
