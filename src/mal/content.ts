@@ -194,20 +194,13 @@ export const projects = [
           "Built the WCAG 2.2-compliant React library behind Mezo Clay: the component layer purpose-built for the Thesis BitcoinFi suite, from the ground up.",
           "The post-launch audit identified premature styling as the primary implementation bottleneck — a pattern that shows up in every fast-moving crypto team. The fix wasn't more components; it was clearer rules about when to override them.",
         ],
-        images: [
-          {
-            src: '/images/portfolio/pie.png',
-            overlay: '/images/portfolio/blockfi-screen-2.webm',
-          },
-          {
-            src: '/images/portfolio/pie2.png',
-            overlay: '/images/portfolio/blockfi-screen-3.png',
-          },
-          {
-            src: '/images/portfolio/radar.png',
-            overlay: '/images/portfolio/blockfi-screen-1.webm',
-          },
-        ],
+        images: [],
+        cover: {
+          background: '/images/portfolio/world.png',
+          overlays: [
+            { type: 'video', src: '/images/portfolio/Slide3.webm' },
+          ],
+        },
       },
       {
         lead: '2,000+ variants. 50+ base components. One source of truth.',
@@ -219,11 +212,11 @@ export const projects = [
         images: [
           {
             src: '/images/portfolio/wave.png',
-            overlay: '/images/portfolio/blockfi-screen-5.png',
+            overlay: '/images/portfolio/Slide5.webm',
           },
           {
-            src: '/images/portfolio/world.png',
-            overlay: '/images/portfolio/blockfi-screen-4.png',
+            src: '/images/portfolio/pie.png',
+            overlay: '/images/portfolio/Slide4.webm',
           },
         ],
       },
@@ -241,19 +234,9 @@ export const projects = [
     mediaBlocks: [
       {
         kind: 'cover',
-        background: '/images/portfolio/star.png',
+        background: '/images/portfolio/radar.png',
         overlays: [
-          { type: 'video', src: '/images/portfolio/blockfi-screen-1.webm', device: true },
-          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
-        ],
-      },
-      {
-        kind: 'cover',
-        background: '/images/portfolio/blockfi-bg-2.png',
-        overlays: [
-          { type: 'image', src: '/images/portfolio/blockfi-screen-3.png', device: true },
-          { type: 'video', src: '/images/portfolio/blockfi-screen-2.webm', device: true },
-          { type: 'image', src: '/images/portfolio/blockfi-screen-4.png', device: true },
+          { type: 'video', src: '/images/portfolio/mezo-main.webm' },
         ],
       },
     ],

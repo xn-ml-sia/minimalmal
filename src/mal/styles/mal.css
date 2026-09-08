@@ -923,6 +923,14 @@ html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .bloc
   object-fit: contain;
 }
 
+html[data-mal]:not([data-mal-page='home']) .block-media.block-media--cols-2 .block-media__item .block-media__overlay .project-media__video {
+  width: auto;
+  height: auto;
+  max-width: 82cqw;
+  max-height: 92%;
+  aspect-ratio: auto;
+}
+
 html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay img[src$='blockfi-screen-3.png'] {
   transform: scale(0.95);
   transform-origin: center center;
@@ -1011,6 +1019,24 @@ html[data-mal] .block-media-cover__inset .project-media__video {
   aspect-ratio: 16 / 10;
   border-radius: 0;
   box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.28);
+}
+
+html[data-mal] .block-media-cover:not(.block-media-cover--device):has(.block-media-cover__inset > :only-child) .block-media-cover__bg .picture {
+  aspect-ratio: 1892 / 1408;
+}
+
+html[data-mal] .block-media-cover:not(.block-media-cover--device) .block-media-cover__inset:has(> :only-child) {
+  padding: 3.5% 2.5%;
+}
+
+html[data-mal] .block-media-cover:not(.block-media-cover--device) .block-media-cover__inset:has(> :only-child) .project-media__video {
+  width: 86%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  box-shadow: none;
 }
 
 html[data-mal] .block-media-cover--device .block-media-cover__inset {

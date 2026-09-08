@@ -125,6 +125,26 @@ export function ProjectPage() {
                 })}
               </div>
             )}
+
+            {'cover' in section && section.cover && (() => {
+              const cover = section.cover;
+              const devices = 'overlays' in cover ? [...cover.overlays] : [cover.overlay];
+              const device = devices.some((media) => 'device' in media && media.device);
+              return (
+                <div
+                  className={`block block-media-cover${device ? ' block-media-cover--device' : ''}`}
+                >
+                  <div className="block-media-cover__bg">
+                    <Picture src={cover.background} alt="" className="picture--cover" />
+                  </div>
+                  <div className="block-media-cover__inset">
+                    {devices.map((media, mi) => (
+                      <ProjectMedia key={mi} type={media.type} src={media.src} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         ))}
 
