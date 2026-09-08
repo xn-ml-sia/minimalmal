@@ -6,6 +6,16 @@ import { Picture } from '../Picture';
 import { FigureStripes } from '../FigureStripes';
 
 type MediaAsset = { type: 'image' | 'video'; src: string };
+type CoverDevice = MediaAsset & { device?: boolean };
+
+function coverDevices(cover: {
+  overlays?: readonly CoverDevice[];
+  overlay?: CoverDevice;
+}): CoverDevice[] {
+  if (cover.overlays) return [...cover.overlays];
+  if (cover.overlay) return [cover.overlay];
+  return [];
+}
 
 function ProjectMedia({ type, src }: MediaAsset) {
   if (type === 'video') {
@@ -128,8 +138,8 @@ export function ProjectPage() {
 
             {'cover' in section && section.cover && (() => {
               const cover = section.cover;
-              const devices = 'overlays' in cover ? [...cover.overlays] : [cover.overlay];
-              const device = devices.some((media) => 'device' in media && media.device);
+              const devices = coverDevices(cover);
+              const device = devices.some((media) => media.device);
               return (
                 <div
                   className={`block block-media-cover${device ? ' block-media-cover--device' : ''}`}
@@ -162,8 +172,8 @@ export function ProjectPage() {
 
         {project.mediaBlocks.map((block, i) => {
           if (block.kind === 'cover') {
-            const devices = 'overlays' in block ? [...block.overlays] : [block.overlay];
-            const device = devices.some((media) => 'device' in media && media.device);
+            const devices = coverDevices(block);
+            const device = devices.some((media) => media.device);
             return (
               <div
                 key={i}
