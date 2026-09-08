@@ -1,4 +1,4 @@
-export const EMAIL = 'hello@example.com';
+export const EMAIL = 'mallastate@gmail.com';
 export const LINKEDIN = '#';
 
 export const nav = [
