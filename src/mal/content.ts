@@ -9,17 +9,17 @@ export const nav = [
 export const work = {
   title: 'Work',
   intro:
-    'Leading for impact, then designing for it — org infrastructure, product surfaces, and the numbers that followed.',
+    'Building interfaces end to end: first sketch to production, and the numbers that followed.',
   introLines: [
-    'Leading for impact, then designing for it — org',
-    'infrastructure, product surfaces, and the numbers',
+    'Building interfaces end to end: first sketch',
+    'to production, and the numbers',
     'that followed.',
   ],
   impact: [
-    { org: 'BlockFi', value: '$50M', label: 'monthly revenue' },
-    { org: 'BlockFi', value: '+200%', label: 'trades / 90 days' },
-    { org: 'Mezo', value: '98%', label: 'sprint completion' },
-    { org: 'Mezo', value: '$200M+', label: 'TVL · 25K+ users' },
+    { org: 'Mezo', value: '2,000+', label: 'component variants' },
+    { org: 'Mezo', value: '$200M+', label: 'TVL at mainnet peak' },
+    { org: 'Edmunds', value: '20%', label: 'higher dealer close rate' },
+    { org: 'Edmunds', value: '6x', label: 'faster dealer response' },
   ],
   items: [
     {
@@ -36,8 +36,8 @@ export const work = {
     },
     {
       name: 'Zalando Stories',
-      headline: 'One motion language for a platform built on a proven bet',
-      desc: 'A shared motion system — tokens and primitives — that launched Stories in 11 markets and scaled to 500+ pieces.',
+      headline: 'A shared motion system for a fragmented product',
+      desc: 'Transition tokens and Reduced Motion fallbacks, replacing a patchwork of one-off animations across the platform.',
       image: '/images/portfolio/zalando-main.png',
     }
   ],
@@ -46,7 +46,7 @@ export const work = {
 export const about = {
   title: 'About',
   intro:
-    'I’m Mal Som. I build the conditions for great product work — org infrastructure, delivery systems, and cross-functional standards that make design a measurable driver of business outcomes across 0→1 builds and iterative product evolution.',
+    'I’m Mal Som. I design and build interfaces myself, from the first sketch to the production component, across 0→1 builds and iterative product evolution.',
   capabilitiesFigure: '/images/portfolio/mock-figure.png',
   capabilities: [
     {
@@ -171,8 +171,8 @@ export const about = {
       ],
     },
   ],
-  clients: ['Apple', 'Square', 'BlockFi', 'Andreessen Horowitz', 'Thesis*', 'Mezo', 'EASI', 'Fennel', 'Krisp.ai'],
-  seeking: 'Seeking design leadership roles where product, design, and engineering judgment equally matter.',
+  clients: ['Thesis*', 'Mezo', 'Zalando', 'Mitte Arts Lab', 'Snap', 'Edmunds.com', 'Fantasmo.io', 'Gannett | USA Today Network'],
+  seeking: 'Seeking design engineering roles where product, design, and engineering judgment equally matter.',
   contactLine: 'Got questions? Get in touch.',
 } as const;
 
@@ -509,8 +509,7 @@ export const projects = [
     ],
     tags: ['Systems', 'Consumer', 'Motion', 'Design Sprint'],
     credits: [
-      { role: 'Design lead', name: 'Mal Som' },
-      { role: 'Content', name: 'Mal Som' },
+      { role: 'Product designer', name: 'Mal Som' },
     ],
     clientCredits: [
       { role: 'Client', name: 'Zalando' },
