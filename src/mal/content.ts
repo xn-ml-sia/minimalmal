@@ -25,7 +25,7 @@ export const work = {
     {
       name: 'Mezo Clay Design System',
       headline: 'Converting design debt into product infrastructure',
-      desc: 'Led Clay across three product phases — 2,000+ variants and the system behind $200M+ TVL.',
+      desc: 'Built Clay across three product phases: 2,000+ variants, the system behind $200M+ TVL.',
       image: '/images/portfolio/boy.png',
     },
     {
@@ -191,7 +191,7 @@ export const projects = [
         lead: 'A design system is only as good as the governance behind it.',
         richTitle: 'Building the single source of truth',
         body: [
-          "Led the full migration to Mezo Clay — partnering with Uber Base as the foundation and building a WCAG 2.2-compliant React library purpose-built for the Thesis BitcoinFi suite. Managed a direct report and an engineering contributor from execution through deployment.",
+          "Built the WCAG 2.2-compliant React library behind Mezo Clay: the component layer purpose-built for the Thesis BitcoinFi suite, from the ground up.",
           "The post-launch audit identified premature styling as the primary implementation bottleneck — a pattern that shows up in every fast-moving crypto team. The fix wasn't more components; it was clearer rules about when to override them.",
         ],
         images: [
@@ -213,7 +213,7 @@ export const projects = [
         lead: '2,000+ variants. 50+ base components. One source of truth.',
         richTitle: 'Scale, compliance, and delivery',
         body: [
-          "Partnered with the contributing designer to set quality standards and pattern library conventions. Built and tested every variant against the Mezo product surfaces — deposit, borrow, wallet, explore — so each could ship without a separate design review cycle.",
+          "Set quality standards and pattern-library conventions, then built and tested every variant against the Mezo product surfaces: deposit, borrow, wallet, explore. Each shipped without a separate design review cycle.",
           "The system became the infrastructure behind $322M in testnet deposits, 154K transactions, and $151M TVL at mainnet, peaking at $200M+.",
         ],
         images: [
@@ -262,12 +262,10 @@ export const projects = [
       { name: 'Component integration', description: 'Post-launch audit established the baseline for system governance decisions.', value: '70%' },
       { name: 'TVL at mainnet peak', description: 'The system shipped with every product surface that contributed to Mezo growth.', value: '$200M+' },
       { name: 'Testnet deposits', description: 'Built on the infrastructure shipped during this engagement.', value: '$322M' },
-      { name: 'Sprint completion', description: 'Maintained across the engagement from system build through deployment.', value: '98%' },
     ],
-    tags: ['Design systems', 'Lead', 'Crypto', 'WCAG 2.2', 'React', 'Component library'],
+    tags: ['Design systems', 'Crypto', 'WCAG 2.2', 'React', 'Component library'],
     credits: [
-      { role: 'Design lead', name: 'Mal Som' },
-      { role: 'Contributing designer', name: 'Poised LLC' },
+      { role: 'Senior Product Designer (Design System)', name: 'Mal Som' },
       { role: 'Engineering', name: 'Thesis engineering' },
     ],
     clientCredits: [

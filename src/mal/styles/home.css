@@ -217,7 +217,7 @@
   }
   html[data-mal][data-mal-page='home'] footer a{text-decoration:none; display:inline-flex; align-items:center; gap:5px;} html[data-mal][data-mal-page='home'] footer a:hover{color:var(--ink);} html[data-mal][data-mal-page='home'] footer .ar{width:13px; height:13px;}
 
-  html[data-mal][data-mal-page='home'] .reveal{opacity:1; transform:translateY(18px); transition:transform .8s steps(6);}   /* stepped slide, no fade; opacity must beat Poised .reveal */
+  html[data-mal][data-mal-page='home'] .reveal{opacity:1; transform:translateY(18px); transition:transform .8s steps(6);}   /* stepped slide, no fade; opacity must beat the base .reveal rule */
   html[data-mal][data-mal-page='home'] .reveal.in{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){ html[data-mal][data-mal-page='home'] .reveal{transform:none;} html[data-mal][data-mal-page='home'] .hero .cue .ln::after{animation:none;} }
   @media(max-width:720px){
