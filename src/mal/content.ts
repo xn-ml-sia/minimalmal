@@ -194,11 +194,11 @@ export const projects = [
           "Built the WCAG 2.2-compliant React library behind Mezo Clay: the component layer purpose-built for the Thesis BitcoinFi suite, from the ground up.",
           "The post-launch audit identified premature styling as the primary implementation bottleneck — a pattern that shows up in every fast-moving crypto team. The fix wasn't more components; it was clearer rules about when to override them.",
         ],
-        images: [],
-        media: {
-          type: 'video',
-          src: '/images/portfolio/specs-carousel.webm',
-        },
+        images: [
+          '/images/portfolio/mezo-clay/button-spec.png',
+          '/images/portfolio/mezo-clay/badge-spec.png',
+          '/images/portfolio/mezo-clay/banner-spec.png',
+        ],
       },
       {
         lead: '2,000+ variants. 50+ base components. One source of truth.',

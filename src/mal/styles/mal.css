@@ -964,6 +964,59 @@ html[data-mal] .block-media--mezo-clay .picture__img {
   box-sizing: border-box;
 }
 
+/* Mezo 3-up specs: equal columns, height matched to button-spec, top-cropped fill. */
+@media screen and (min-width: 768px) {
+  html[data-mal] .block-media--mezo-clay.block-media--cols-3 {
+    align-items: stretch;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  html[data-mal] .block-media--mezo-clay.block-media--cols-3 .media.block-media__item {
+    grid-column: auto;
+    min-width: 0;
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+html[data-mal] .block-media--mezo-clay.block-media--cols-3 .picture {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2616 / 2960;
+  overflow: hidden;
+}
+
+html[data-mal] .block-media--mezo-clay.block-media--cols-3 .picture__img {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: top center;
+  padding: 0;
+}
+
+/* Center badge board: full column width, natural height. */
+html[data-mal] .block-media--mezo-clay.block-media--cols-3 .media.block-media__item:nth-child(2) {
+  align-self: start;
+}
+
+html[data-mal] .block-media--mezo-clay.block-media--cols-3 .media.block-media__item:nth-child(2) .picture {
+  aspect-ratio: auto;
+  height: auto;
+  overflow: visible;
+}
+
+html[data-mal] .block-media--mezo-clay.block-media--cols-3 .media.block-media__item:nth-child(2) .picture__img {
+  position: static !important;
+  inset: auto;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+  padding: 0.85rem;
+}
+
 html[data-mal] .block-media--mezo-clay .block-media__item--video .project-media__video {
   position: static;
   width: 100%;
