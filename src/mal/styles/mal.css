@@ -931,6 +931,32 @@ html[data-mal]:not([data-mal-page='home']) .block-media.block-media--cols-2 .blo
   aspect-ratio: auto;
 }
 
+/* Mezo Clay screenshots vary widely in height at a fixed width (docs pages, not product photos).
+   A fixed height forces cropping either way, so let each frame size to its own image (flex
+   height) instead, top-anchored so the component titles line up across the row. The gray
+   fill/border keep white doc pages visible against the page background. */
+html[data-mal] .block-media--mezo-clay .media.block-media__item {
+  align-self: start;
+}
+
+html[data-mal] .block-media--mezo-clay .picture {
+  aspect-ratio: auto;
+  height: auto;
+  background: #efefef;
+  border: 1px solid #dcdcdc;
+  align-self: start;
+}
+
+html[data-mal] .block-media--mezo-clay .picture__img {
+  position: static !important;
+  width: 100%;
+  height: auto !important;
+  object-fit: contain;
+  display: block;
+  padding: 0.85rem;
+  box-sizing: border-box;
+}
+
 html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay img[src$='blockfi-screen-3.png'] {
   transform: scale(0.95);
   transform-origin: center center;

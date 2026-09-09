@@ -7,6 +7,8 @@ import { FigureStripes } from '../FigureStripes';
 
 type MediaAsset = { type: 'image' | 'video'; src: string };
 type CoverDevice = MediaAsset & { device?: boolean };
+type SectionCover = { background: string; overlays?: readonly CoverDevice[]; overlay?: CoverDevice };
+type SectionWithCover = { cover?: SectionCover };
 
 function coverDevices(cover: {
   overlays?: readonly CoverDevice[];
@@ -110,7 +112,7 @@ export function ProjectPage() {
 
             {section.images.length > 0 && (
               <div
-                className={`block block-media block--bg-light block--safe-area block-media--cols-${section.images.length === 3 ? 3 : 2} block-media--ctx-project block-media--expansion-wrapper`}
+                className={`block block-media block--bg-light block--safe-area block-media--cols-${section.images.length === 3 ? 3 : 2} block-media--ctx-project block-media--expansion-wrapper block-media--${project.slug}`}
               >
                 {section.images.map((item, ii) => {
                   const src = typeof item === 'string' ? item : item.src;
@@ -136,8 +138,8 @@ export function ProjectPage() {
               </div>
             )}
 
-            {'cover' in section && section.cover && (() => {
-              const cover = section.cover;
+            {(section as SectionWithCover).cover && (() => {
+              const cover = (section as SectionWithCover).cover!;
               const devices = coverDevices(cover);
               const device = devices.some((media) => media.device);
               return (

@@ -185,7 +185,7 @@ export const projects = [
     year: '2023',
     service: 'Systems',
     readTime: 4,
-    image: '/images/portfolio/boy.png',
+    image: '/images/portfolio/mezo-clay/card-spec.png',
     featuredSections: [
       {
         lead: 'A design system is only as good as the governance behind it.',
@@ -194,13 +194,11 @@ export const projects = [
           "Built the WCAG 2.2-compliant React library behind Mezo Clay: the component layer purpose-built for the Thesis BitcoinFi suite, from the ground up.",
           "The post-launch audit identified premature styling as the primary implementation bottleneck — a pattern that shows up in every fast-moving crypto team. The fix wasn't more components; it was clearer rules about when to override them.",
         ],
-        images: [],
-        cover: {
-          background: '/images/portfolio/world.png',
-          overlays: [
-            { type: 'video', src: '/images/portfolio/Slide3.webm' },
-          ],
-        },
+        images: [
+          '/images/portfolio/mezo-clay/button-spec.png',
+          '/images/portfolio/mezo-clay/badge-spec.png',
+          '/images/portfolio/mezo-clay/banner-spec.png',
+        ],
       },
       {
         lead: '2,000+ variants. 50+ base components. One source of truth.',
@@ -210,14 +208,8 @@ export const projects = [
           "The system became the infrastructure behind $322M in testnet deposits, 154K transactions, and $151M TVL at mainnet, peaking at $200M+.",
         ],
         images: [
-          {
-            src: '/images/portfolio/wave.png',
-            overlay: '/images/portfolio/Slide5.webm',
-          },
-          {
-            src: '/images/portfolio/pie.png',
-            overlay: '/images/portfolio/Slide4.webm',
-          },
+          '/images/portfolio/mezo-clay/dialog-spec.png',
+          '/images/portfolio/mezo-clay/input-selection-spec.png',
         ],
       },
       {
@@ -227,19 +219,14 @@ export const projects = [
           "A 70% component integration rate at post-launch audit sounds like success. It is — but the 30% that wasn't integrated told the real story: premature styling decisions made during testnet were being maintained as one-off overrides instead of being resolved back into the system.",
           "The governance decisions informed by that audit — when to override, when to extend, when to propose a new component — were as important as the components themselves.",
         ],
-        images: [],
-      },
-    ],
-    mockups: [],
-    mediaBlocks: [
-      {
-        kind: 'cover',
-        background: '/images/portfolio/radar.png',
-        overlays: [
-          { type: 'video', src: '/images/portfolio/mezo-main.webm' },
+        images: [
+          '/images/portfolio/mezo-clay/empty-state-spec.png',
+          '/images/portfolio/mezo-clay/button-group-spec.png',
         ],
       },
     ],
+    mockups: [],
+    mediaBlocks: [],
     closingLead: 'Infrastructure that outlasts the sprint cycle is the difference between a design system and a component dump.',
     stats: [
       { name: 'Component integration', description: 'Post-launch audit established the baseline for system governance decisions.', value: '70%' },
