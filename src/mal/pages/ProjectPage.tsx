@@ -62,7 +62,7 @@ export function ProjectPage() {
       >
         <div className="hero-project__inner">
           <div className="hero-project__figure">
-            <FigureStripes src={project.image} alt={project.name} />
+            <FigureStripes src={project.image} alt={project.name} className={`figure-stripes--${project.slug}`} />
           </div>
           <div className="hero-project__meta">
             <h1 className="heading heading--xl hero-project__title">{project.name}</h1>

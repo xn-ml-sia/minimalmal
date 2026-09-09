@@ -931,6 +931,13 @@ html[data-mal]:not([data-mal-page='home']) .block-media.block-media--cols-2 .blo
   aspect-ratio: auto;
 }
 
+/* card-spec.png is a very tall doc page inside a 3:2 hero crop — center-crop (the default)
+   only shows a thin middle slice with no branding. Anchor to the top so the title, status
+   badge, and the actual product card examples show instead. */
+html[data-mal] .figure-stripes--mezo-clay .picture__img {
+  object-position: top;
+}
+
 /* Mezo Clay screenshots vary widely in height at a fixed width (docs pages, not product photos).
    A fixed height forces cropping either way, so let each frame size to its own image (flex
    height) instead, top-anchored so the component titles line up across the row. The gray
