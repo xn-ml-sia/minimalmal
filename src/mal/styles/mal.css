@@ -978,9 +978,16 @@ html[data-mal] .block-media--mezo-clay .block-media__item--video .project-media_
   box-sizing: border-box;
 }
 
-/* When a Mezo 2-up pairs a video with a still, match the still to the video height. */
+/* When a Mezo 2-up pairs a video with a still, equal columns + match still to video height. */
 html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) {
   align-items: stretch;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) .media.block-media__item {
+  grid-column: auto;
+  min-width: 0;
+  width: 100%;
 }
 
 html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) .media.block-media__item:not(.block-media__item--video) {
@@ -990,14 +997,20 @@ html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__ite
 }
 
 html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) .media.block-media__item:not(.block-media__item--video) .picture {
+  position: relative;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) .media.block-media__item:not(.block-media__item--video) .picture__img {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
   height: 100% !important;
   object-fit: cover;
   object-position: top center;
+  padding: 0;
 }
 
 html[data-mal]:not([data-mal-page='home']) .block-media .block-media__item .block-media__overlay img[src$='blockfi-screen-3.png'] {
