@@ -8,7 +8,7 @@ import { FigureStripes } from '../FigureStripes';
 type MediaAsset = { type: 'image' | 'video'; src: string };
 type CoverDevice = MediaAsset & { device?: boolean };
 type SectionCover = { background: string; overlays?: readonly CoverDevice[]; overlay?: CoverDevice };
-type SectionWithCover = { cover?: SectionCover };
+type SectionWithExtras = { cover?: SectionCover; media?: MediaAsset };
 
 function coverDevices(cover: {
   overlays?: readonly CoverDevice[];
@@ -117,12 +117,17 @@ export function ProjectPage() {
                 {section.images.map((item, ii) => {
                   const src = typeof item === 'string' ? item : item.src;
                   const overlay = typeof item === 'string' ? undefined : item.overlay;
+                  const isVideo = /\.(webm|mp4)$/i.test(src);
                   return (
                     <div
                       key={ii}
-                      className={`media block-media__item${overlay ? ' block-media__item--overlay' : ''}`}
+                      className={`media block-media__item${overlay ? ' block-media__item--overlay' : ''}${isVideo ? ' block-media__item--video' : ''}`}
                     >
-                      <Picture src={src} alt="" className="picture--cover picture--rounded" />
+                      {isVideo ? (
+                        <ProjectMedia type="video" src={src} />
+                      ) : (
+                        <Picture src={src} alt="" className="picture--cover picture--rounded" />
+                      )}
                       {overlay && (
                         <div className="block-media__overlay">
                           {/\.(webm|mp4)$/i.test(overlay) ? (
@@ -138,8 +143,17 @@ export function ProjectPage() {
               </div>
             )}
 
-            {(section as SectionWithCover).cover && (() => {
-              const cover = (section as SectionWithCover).cover!;
+            {(section as SectionWithExtras).media && (
+              <div className={`block block-media-bleed block-media-bleed--${project.slug}`}>
+                <ProjectMedia
+                  type={(section as SectionWithExtras).media!.type}
+                  src={(section as SectionWithExtras).media!.src}
+                />
+              </div>
+            )}
+
+            {(section as SectionWithExtras).cover && (() => {
+              const cover = (section as SectionWithExtras).cover!;
               const devices = coverDevices(cover);
               const device = devices.some((media) => media.device);
               return (
