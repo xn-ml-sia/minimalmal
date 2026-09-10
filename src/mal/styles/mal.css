@@ -122,8 +122,69 @@ html[data-mal] .mal-nav a {
 }
 
 html[data-mal] .mal-nav__mark {
-  font-weight: 400;
-  font-variation-settings: 'wght' 500;
+  --mal-mark-size: 1.35em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32em;
+  line-height: 1;
+}
+
+html[data-mal] .mal-nav__wordmark {
+  display: block;
+  height: calc(var(--mal-mark-size) * 0.82);
+  width: calc(var(--mal-mark-size) * 0.82 * 69 / 23);
+  flex: none;
+  background-color: currentColor;
+  -webkit-mask: url('/images/portfolio/malword.svg') no-repeat center / contain;
+  mask: url('/images/portfolio/malword.svg') no-repeat center / contain;
+}
+
+html[data-mal] .mal-nav__logo {
+  width: var(--mal-mark-size);
+  height: var(--mal-mark-size);
+  display: block;
+  flex: none;
+  overflow: visible;
+}
+
+html[data-mal] .mal-nav__logo-dot {
+  transform-origin: 16px 16px;
+  animation: mal-logo-bounce 3.2s linear infinite;
+}
+
+/* Straight chords between rim hits — circular billiard / ping-pong. */
+@keyframes mal-logo-bounce {
+  0% {
+    transform: translate(0px, -7.4px);
+  }
+  14.29% {
+    transform: translate(7.21px, 1.65px);
+  }
+  28.57% {
+    transform: translate(-3.21px, 6.67px);
+  }
+  42.86% {
+    transform: translate(-5.79px, -4.61px);
+  }
+  57.14% {
+    transform: translate(5.79px, -4.61px);
+  }
+  71.43% {
+    transform: translate(3.21px, 6.67px);
+  }
+  85.71% {
+    transform: translate(-7.21px, 1.65px);
+  }
+  100% {
+    transform: translate(0px, -7.4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-mal] .mal-nav__logo-dot {
+    animation: none;
+    transform: none;
+  }
 }
 
 html[data-mal][data-mal-page='home'],
