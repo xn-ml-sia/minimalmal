@@ -112,7 +112,7 @@ export function ProjectPage() {
             <div className="hero-project__services-readtime">
               <div className="hero-project__services">
                 <ul>
-                  <li>{project.service}</li>
+                  {project.service ? <li>{project.service}</li> : null}
                   {project.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
                   ))}

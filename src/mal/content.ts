@@ -133,7 +133,7 @@ export const projects = [
     client: 'Mezo / Thesis',
     sector: 'Crypto',
     year: '2025',
-    service: 'Systems',
+    service: '',
     readTime: 4,
     image: '/images/portfolio/main3.png',
     featuredSections: [
@@ -208,7 +208,7 @@ export const projects = [
     client: 'BlockFi',
     sector: 'Fintech',
     year: '2021',
-    service: 'Leadership',
+    service: '',
     readTime: 4,
     image: '/images/portfolio/gf-blockfi.jpg',
     featuredSections: [
@@ -270,7 +270,7 @@ export const projects = [
     client: 'BlockFi',
     sector: 'Fintech',
     year: '2021',
-    service: 'Leadership',
+    service: '',
     readTime: 4,
     image: '/images/portfolio/blockfi-card-rewards.png',
     featuredSections: [
@@ -360,7 +360,7 @@ export const projects = [
     client: 'Zalando',
     sector: 'Consumer',
     year: '2023',
-    service: 'Systems',
+    service: '',
     readTime: 4,
     image: '/images/portfolio/zalando-main.png',
     featuredSections: [
