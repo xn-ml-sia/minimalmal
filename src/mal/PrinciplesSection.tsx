@@ -214,7 +214,7 @@ export function PrinciplesSection() {
               busy = false;
             }, 620);
             f.sv.classList.remove('sm-jump');
-            void f.sv.offsetWidth;
+            void f.sv.getBoundingClientRect();
             f.sv.classList.add('sm-jump');
             const host = f.sv.parentNode;
             if (!host) return;
