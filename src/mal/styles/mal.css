@@ -180,6 +180,59 @@ html[data-mal] .mal-nav__logo-dot {
   }
 }
 
+html[data-mal] .mal-pxbtn--chip {
+  padding: 0.35em 0.7em;
+  font-size: var(--fs-xs);
+  line-height: var(--lh-xs);
+  font-variation-settings: 'wght' 400;
+  clip-path: var(--mal-pxclip-sm);
+}
+
+html[data-mal] .media-blocks-toggle--compact {
+  border: 0;
+  border-radius: 0;
+  padding: 0.55rem 0.9rem;
+  background: var(--mal-ink);
+  color: #fff;
+  font-family: var(--font-primary), sans-serif;
+  font-size: var(--fs-xs);
+  line-height: var(--lh-xs);
+  letter-spacing: 0.06em;
+  clip-path: var(--mal-pxclip);
+  backdrop-filter: none;
+}
+
+html[data-mal] .media-blocks-toggle--compact.is-on {
+  background: var(--mal-hover);
+}
+
+html[data-mal] .media-blocks-toggle--compact .media-blocks-toggle__track {
+  display: none;
+}
+
+html[data-mal] .mal-nav__links {
+  display: flex;
+  gap: 1.1rem;
+}
+
+html[data-mal] .mal-nav__links a {
+  position: relative;
+}
+
+html[data-mal] .mal-nav__links a.is-on::after,
+html[data-mal] .mal-nav__links a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.12em;
+  border-bottom: 1px solid currentColor;
+}
+
+html[data-mal] #toplink {
+  display: none !important;
+}
+
 html[data-mal][data-mal-page='work-detail'] main {
   margin-top: 0;
 }
