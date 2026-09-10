@@ -133,7 +133,7 @@ export const projects = [
     client: 'Mezo / Thesis',
     sector: 'Crypto',
     year: '2025',
-    service: 'Systems',
+    
     readTime: 4,
     image: '/images/portfolio/main3.png',
     featuredSections: [
@@ -195,11 +195,11 @@ export const projects = [
     tags: ['Design System', 'Crypto', 'a11y', 'Storybook', 'Component library'],
     credits: [
       { role: 'Senior Product Designer (Design System)', name: 'Mal Som' },
-      { role: 'Engineering', name: 'Thesis engineering' },
+      { role: 'Engineering', name: 'Clay engineers' },
     ],
     clientCredits: [
       { role: 'Client', name: 'Mezo / Thesis' },
-      { role: 'PM', name: 'Thesis product team' },
+      { role: 'PM', name: 'Clay team' },
     ],
   },
   {
@@ -208,7 +208,6 @@ export const projects = [
     client: 'BlockFi',
     sector: 'Fintech',
     year: '2021',
-    service: 'Leadership',
     readTime: 4,
     image: '/images/portfolio/gf-blockfi.jpg',
     featuredSections: [
@@ -256,8 +255,7 @@ export const projects = [
     ],
     tags: ['Lead', 'Fintech', 'Mobile', 'iOS', 'Android', 'Compliance'],
     credits: [
-      { role: 'Design director', name: 'Mal Som' },
-      { role: 'Product designers', name: 'BlockFi design team' },
+      { role: 'Designer', name: 'Mal Som' },
       { role: 'Engineering', name: 'BlockFi engineering' },
     ],
     clientCredits: [
@@ -271,7 +269,6 @@ export const projects = [
     client: 'BlockFi',
     sector: 'Fintech',
     year: '2021',
-    service: 'Leadership',
     readTime: 4,
     image: '/images/portfolio/blockfi-card-rewards.png',
     featuredSections: [
@@ -348,12 +345,11 @@ export const projects = [
     tags: ['Lead', 'Fintech', 'Mobile', 'Credit Card', 'iOS', 'Android'],
     credits: [
       { role: 'Lead designer, mobile', name: 'Mal Som' },
-      { role: 'Product designers', name: 'BlockFi design team' },
-      { role: 'Engineering', name: 'BlockFi engineering' },
+      { role: 'Engineering', name: 'Apps team' },
     ],
     clientCredits: [
       { role: 'Client', name: 'BlockFi' },
-      { role: 'PM', name: 'BlockFi product team' },
+      { role: 'PM', name: 'Apps product team' },
     ],
   },
   {
@@ -362,7 +358,6 @@ export const projects = [
     client: 'Zalando',
     sector: 'Consumer',
     year: '2023',
-    service: 'Systems',
     readTime: 4,
     image: '/images/portfolio/zalando-main.png',
     featuredSections: [
@@ -437,9 +432,11 @@ export const projects = [
     tags: ['Systems', 'B2C', 'Motion', 'Design System'],
     credits: [
       { role: 'Product designer', name: 'Mal Som' },
+      { role: 'Engineering', name: 'ZDS engineers' },
     ],
     clientCredits: [
       { role: 'Client', name: 'Zalando' },
+      { role: 'PM', name: 'ZDS product' },
     ],
   }
 ] as const;

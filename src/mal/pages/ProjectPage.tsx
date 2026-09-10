@@ -24,12 +24,42 @@ function coverDevices(cover: {
   return [];
 }
 
-function ProjectMedia({ type, src }: MediaAsset) {
-  if (type === 'video') {
-    return (
-      <video className="project-media__video" src={src} autoPlay loop muted playsInline />
+function ProjectVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          void video.play().catch(() => undefined);
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 },
     );
-  }
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <video
+      ref={ref}
+      className="project-media__video"
+      src={src}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+    />
+  );
+}
+
+function ProjectMedia({ type, src }: MediaAsset) {
+  if (type === 'video') return <ProjectVideo src={src} />;
   return <Picture src={src} alt="" className="picture--cover" />;
 }
 
