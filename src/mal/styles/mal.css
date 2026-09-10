@@ -132,7 +132,7 @@ html[data-mal] .mal-nav__mark {
 html[data-mal] .mal-nav__wordmark {
   display: block;
   height: calc(var(--mal-mark-size) * 0.82);
-  width: calc(var(--mal-mark-size) * 0.82 * 69 / 23);
+  width: calc(var(--mal-mark-size) * 0.82 * 64 / 22);
   flex: none;
   background-color: currentColor;
   -webkit-mask: url('/images/portfolio/malword.svg') no-repeat center / contain;
