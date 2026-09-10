@@ -2,7 +2,6 @@ import { useLayoutEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Nav } from './Nav';
 import './styles/inner.css';
-import './styles/inner-home.css';
 import './styles/pages.css';
 import './styles/mal.css';
 

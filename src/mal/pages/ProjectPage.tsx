@@ -112,7 +112,6 @@ export function ProjectPage() {
             <div className="hero-project__services-readtime">
               <div className="hero-project__services">
                 <ul>
-                  {project.service ? <li>{project.service}</li> : null}
                   {project.tags.map((tag) => (
                     <li key={tag}>{tag}</li>
                   ))}
@@ -253,36 +252,21 @@ export function ProjectPage() {
         )}
 
         {project.mediaBlocks.map((block, i) => {
-          if (block.kind === 'cover') {
-            const devices = coverDevices(block);
-            const device = devices.some((media) => media.device);
-            return (
-              <div
-                key={i}
-                className={`block block-media-cover${device ? ' block-media-cover--device' : ''}`}
-              >
-                <div className="block-media-cover__bg">
-                  <Picture src={block.background} alt="" className="picture--cover" />
-                </div>
-                <div className="block-media-cover__inset">
-                  {devices.map((media, mi) => (
-                    <ProjectMedia key={mi} type={media.type} src={media.src} />
-                  ))}
-                </div>
-              </div>
-            );
-          }
-          if (block.kind === 'split') {
-            return (
-              <div key={i} className="block block-media-split">
-                <ProjectMedia type={block.left.type} src={block.left.src} />
-                <ProjectMedia type={block.right.type} src={block.right.src} />
-              </div>
-            );
-          }
+          const devices = coverDevices(block);
+          const device = devices.some((media) => media.device);
           return (
-            <div key={i} className="block block-media-bleed">
-              <ProjectMedia type={block.media.type} src={block.media.src} />
+            <div
+              key={i}
+              className={`block block-media-cover${device ? ' block-media-cover--device' : ''}`}
+            >
+              <div className="block-media-cover__bg">
+                <Picture src={block.background} alt="" className="picture--cover" />
+              </div>
+              <div className="block-media-cover__inset">
+                {devices.map((media, mi) => (
+                  <ProjectMedia key={mi} type={media.type} src={media.src} />
+                ))}
+              </div>
             </div>
           );
         })}

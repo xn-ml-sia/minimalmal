@@ -11,19 +11,16 @@ export const work = {
   items: [
     {
       name: 'Mezo Clay Design System',
-      headline: 'Converting design debt into product infrastructure',
       desc: 'Built Clay across three product phases: 2,000+ variants, the system behind $200M+ TVL.',
       image: '/images/portfolio/main3.png',
     },
     {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
-      headline: 'Scoping and shipping the mobile experience behind the world’s first Bitcoin rewards credit card',
       desc: 'Lead designer, mobile. 50,000+ cardholders in 90 days.',
       image: '/images/portfolio/blockfi-card-rewards.png',
     },
     {
       name: 'Zalando Stories',
-      headline: 'Transition tokens for Stories across app and web',
       desc: 'Transition tokens and Reduced Motion fallbacks, replacing a patchwork of one-off animations across the platform.',
       image: '/images/portfolio/zalando-main.png',
     }
@@ -33,8 +30,6 @@ export const work = {
 export const about = {
   title: 'About',
   origin: {
-    heading: 'It’s me. Mal Som.',
-    kick: 'About',
     body: [
       'I design and build interfaces myself, from the first sketch to the production component. No handoff.',
       'My recent work has been on products where the UI has to hold up under real complexity: DeFi transaction flows, verifiable-credential identity systems, and a generative AI asset pipeline, screens where getting it wrong costs someone money or time.',
@@ -44,7 +39,6 @@ export const about = {
   },
   principles: {
     heading: 'Design with purpose. Keep playing with tools.',
-    kick: 'Principles',
     lead: 'You model utility, empathy, and curiosity on the hardest days.',
     items: [
       {
@@ -133,7 +127,6 @@ export const projects = [
     client: 'Mezo / Thesis',
     sector: 'Crypto',
     year: '2025',
-    service: '',
     readTime: 4,
     image: '/images/portfolio/main3.png',
     featuredSections: [
@@ -203,74 +196,11 @@ export const projects = [
     ],
   },
   {
-    slug: 'blockfi-mobile',
-    name: 'BlockFi Mobile',
-    client: 'BlockFi',
-    sector: 'Fintech',
-    year: '2021',
-    service: '',
-    readTime: 4,
-    image: '/images/portfolio/gf-blockfi.jpg',
-    featuredSections: [
-      {
-        lead: 'Pushing back on the brief was the first design decision.',
-        richTitle: 'Reframing the problem',
-        body: [
-          "Product benchmarking and heuristic evaluation surfaced a pattern no one had named yet: the segmented control forcing users to choose denomination before intent was the single biggest source of drop-off. Moving buy/sell intent before the amount screen eliminated it.",
-          "Recurring trades had been buried at the summary screen — three steps too late. Surfacing them earlier required a structural change to the flow that the original brief hadn't scoped. Both decisions were validated through user testing before implementation.",
-        ],
-        images: ['/images/portfolio/gf-blockfi.jpg', '/images/portfolio/mock-bbu.png'],
-      },
-      {
-        lead: 'Trades grew 200%+ in 90 days. Mobile outpaced web for the first time.',
-        richTitle: 'Measuring the impact',
-        body: [
-          "The same changes were applied consistently across web and mobile — not as a one-off mobile fix but as a rethought trading interaction model. The consistency mattered as much as the individual improvements.",
-          "The result contributed directly to BlockFi's growth in service of 225K+ clients and $50M monthly revenue — and validated the case for design having a seat at product strategy decisions, not just execution.",
-        ],
-        images: ['/images/portfolio/gf-blockfi.jpg', '/images/portfolio/gf-fennel.png'],
-      },
-    ],
-    mockups: ['/images/portfolio/gf-blockfi.jpg', '/images/portfolio/mock-bbu.png', '/images/portfolio/gf-fennel.png'],
-    mediaBlocks: [
-      {
-        kind: 'cover',
-        background: '/images/portfolio/gf-blockfi.jpg',
-        overlay: { type: 'image', src: '/images/portfolio/mock-bbu.png' },
-      },
-      {
-        kind: 'split',
-        left: { type: 'image', src: '/images/portfolio/gf-blockfi.jpg' },
-        right: { type: 'image', src: '/images/portfolio/mock-bbu.png' },
-      },
-      {
-        kind: 'bleed',
-        media: { type: 'image', src: '/images/portfolio/gf-fennel.png' },
-      },
-    ],
-    closingLead: 'The brief was too small. Pushing back on it was the design work.',
-    stats: [
-      { name: 'Trades in 90 days', description: 'Mobile outpaced web-based trades for the first time following launch.', value: '+200%' },
-      { name: 'Monthly revenue', description: 'BlockFi revenue at time of engagement, grown in part through trading volume.', value: '$50M' },
-      { name: 'Clients served', description: 'Active BlockFi users at time of mobile trading redesign launch.', value: '225K+' },
-    ],
-    tags: ['Lead', 'Fintech', 'Mobile', 'iOS', 'Android', 'Compliance'],
-    credits: [
-      { role: 'Designer', name: 'Mal Som' },
-      { role: 'Engineering', name: 'BlockFi engineering' },
-    ],
-    clientCredits: [
-      { role: 'Client', name: 'BlockFi' },
-      { role: 'PM', name: 'BlockFi product team' },
-    ],
-  },
-  {
     slug: 'blockfi-rewards-card',
     name: 'BlockFi — Credit Card Rewards (Mobile)',
     client: 'BlockFi',
     sector: 'Fintech',
     year: '2021',
-    service: '',
     readTime: 4,
     image: '/images/portfolio/blockfi-card-rewards.png',
     featuredSections: [
@@ -360,7 +290,6 @@ export const projects = [
     client: 'Zalando',
     sector: 'Consumer',
     year: '2023',
-    service: '',
     readTime: 4,
     image: '/images/portfolio/zalando-main.png',
     featuredSections: [
