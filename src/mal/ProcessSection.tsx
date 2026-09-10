@@ -284,12 +284,13 @@ export function ProcessSection() {
           <h2>
             Discover. Explore.
             <br />
-            Validate. Implement.
+            Validate. <span className="mal-i" aria-hidden="true" />
+            mplement.
           </h2>
           <div className="phx">
             <p className="pd">
-              Look wider before anyone locks a solution. Then artifacts, tests, and
-              sign-off so you can tell whether design held.
+              Widen the aperture before anyone commits to a solution. Then artifacts, tests, and
+              sign-off so design is a measurable driver of the outcome.
             </p>
           </div>
         </div>

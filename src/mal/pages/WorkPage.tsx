@@ -12,10 +12,11 @@ export function WorkPage() {
       <section className="intro mal-intro">
         <div className="wrap">
           <p className="lead ready">
-            I’m <span className="lead-name">Mal Som</span>{' '}
+            I’m <span className="lead-name"><span className="mal-m" aria-hidden="true" />al Som</span>{' '}
             <span className="lead-dash">—</span> a designer who takes interfaces
             from first sketch to shipped code, on products where a confusing
-            screen costs someone money or time.
+            screen costs someone <span className="mal-m" aria-hidden="true" />
+            oney or time.
           </p>
         </div>
       </section>

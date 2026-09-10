@@ -768,6 +768,28 @@ html[data-mal][data-mal-page='work'] .mal-intro .lead-dash {
   color: #e00025;
 }
 
+html[data-mal] .mal-m {
+  display: inline-block;
+  height: 0.82em;
+  width: calc(0.82em * 25 / 22);
+  margin-inline-end: 0.02em;
+  vertical-align: -0.04em;
+  background-color: currentColor;
+  -webkit-mask: url('/images/portfolio/m.svg') no-repeat center / contain;
+  mask: url('/images/portfolio/m.svg') no-repeat center / contain;
+}
+
+html[data-mal] .mal-i {
+  display: inline-block;
+  height: 0.95em;
+  width: calc(0.95em * 8 / 26);
+  margin-inline-end: 0.04em;
+  vertical-align: -0.06em;
+  background-color: currentColor;
+  -webkit-mask: url('/images/portfolio/i.svg') no-repeat center / contain;
+  mask: url('/images/portfolio/i.svg') no-repeat center / contain;
+}
+
 html[data-mal][data-mal-page='work'] .work-feature {
   background: transparent;
 }

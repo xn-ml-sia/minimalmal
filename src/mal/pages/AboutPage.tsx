@@ -10,8 +10,10 @@ export function AboutPage() {
       <section className="ed mal-ed" id="origin">
         <div className="wrap">
           <div className="head">
-            <h2>{about.origin.heading}</h2>
-            <p className="kick mono">{about.origin.kick}</p>
+            <h2>
+              It’s me. <span className="mal-m" aria-hidden="true" />
+              al Som.
+            </h2>
           </div>
           <div>
             {about.origin.body.map((para) => (

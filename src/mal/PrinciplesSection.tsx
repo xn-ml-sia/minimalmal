@@ -249,7 +249,6 @@ export function PrinciplesSection() {
       <div className="wrap">
         <div className="head">
           <h2>{principles.heading}</h2>
-          <p className="kick mono">{principles.kick}</p>
         </div>
         <div>
           <p>{principles.lead}</p>
