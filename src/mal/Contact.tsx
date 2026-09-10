@@ -4,10 +4,6 @@ export function Contact() {
   return (
     <section className="mal-contact">
       <p>{about.seeking}</p>
-      <p>{about.contactLine}</p>
-      <a className="mal-pxbtn" href={`mailto:${EMAIL}`}>
-        Get in touch
-      </a>
       <p>
         <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         {' · '}

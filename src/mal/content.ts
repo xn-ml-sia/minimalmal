@@ -1,5 +1,5 @@
 export const EMAIL = 'mallastate@gmail.com';
-export const LINKEDIN = '#';
+export const LINKEDIN = 'https://www.linkedin.com/in/minimal/';
 
 export const nav = [
   { name: 'Work', to: '/' },
@@ -8,7 +8,6 @@ export const nav = [
 
 export const work = {
   title: 'Work',
-  lead: 'I’m Mal Som — a designer who takes interfaces from first sketch to shipped code, on products where a confusing screen costs someone money or time. But first, here’s some work:',
   items: [
     {
       name: 'Mezo Clay Design System',
@@ -19,12 +18,12 @@ export const work = {
     {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
       headline: 'Scoping and shipping the mobile experience behind the world’s first Bitcoin rewards credit card',
-      desc: 'Lead designer, mobile, for the world’s first Bitcoin rewards card — 50,000+ cardholders in 90 days.',
+      desc: 'Lead designer, mobile. 50,000+ cardholders in 90 days.',
       image: '/images/portfolio/blockfi-card-rewards.png',
     },
     {
       name: 'Zalando Stories',
-      headline: 'A shared motion system for a fragmented product',
+      headline: 'Transition tokens for Stories across app and web',
       desc: 'Transition tokens and Reduced Motion fallbacks, replacing a patchwork of one-off animations across the platform.',
       image: '/images/portfolio/zalando-main.png',
     }
@@ -34,7 +33,7 @@ export const work = {
 export const about = {
   title: 'About',
   origin: {
-    heading: 'It’s me — Mal Som.',
+    heading: 'It’s me. Mal Som.',
     kick: 'About',
     body: [
       'I design and build interfaces myself, from the first sketch to the production component. No handoff.',
@@ -44,25 +43,25 @@ export const about = {
       'Company and client work includes Thesis, Zalando, and Mitte Arts Lab, spanning design systems, motion, accessibility, and generative AI.',
   },
   principles: {
-    heading: 'Work with purpose, play with passion.',
+    heading: 'Design with purpose. Keep playing with tools.',
     kick: 'Principles',
-    lead: 'Utility, empathy, and curiosity aren’t values you declare. They’re what you model on the hardest days.',
+    lead: 'You model utility, empathy, and curiosity on the hardest days.',
     items: [
       {
         mood: 'happy',
         base: '#d8ff00',
         label: 'Utility',
-        body: '“The utility player doesn’t wait to be handed a position.” Hands-on wherever the work needs it: design, code, the parts of the job that don’t fit neatly under one title. / hands-on, wherever needed',
+        body: '“The utility player doesn’t wait to be handed a position.” Hands-on in design, code, and whatever else the job needs.',
       },
       {
         mood: 'sad',
         base: '#3b5bd9',
         label: 'Empathy',
-        body: '“Lead by example. Empathy as default, not a performance.” The kind of teammate a project actually needs, not just the one with the loudest opinion in the room. / serve the team',
+        body: '“Lead by example. Empathy as default, not a performance.” Be the teammate the project needs.',
       },
     ],
     curiosity:
-      'Curiosity — “Always reaching for the next tool.” The tools picked up on personal time end up in the work by Monday. / stay curious',
+      'Curiosity. “Always reaching for the next tool.” Tools I pick up on personal time show up in the work by Monday.',
   },
   capabilities: [
     {
@@ -71,7 +70,7 @@ export const about = {
       items: [
         'Hands-on craft across crypto/DeFi, generative AI, and consumer mobile',
         '0→1 builds (AI pipelines, an SSI identity platform, a design system from zero) and iterative work on shipped products',
-        'Outcomes tied to what changed for the user: negotiation confidence, close rates, response times',
+        'Shipped work measured in negotiation confidence, close rates, and response times',
       ],
     },
     {
@@ -80,7 +79,6 @@ export const about = {
       items: [
         'Usability testing and cross-functional accessibility audits (Edmunds, Zalando)',
         'Screen-reader and WCAG validation across diverse user needs',
-        'User needs centered throughout the design process',
       ],
     },
     {
@@ -106,11 +104,8 @@ export const about = {
       items: [
         'Native, mobile, and web design',
         '0 to 1 product development',
-        'Iterative design improvement',
         'Usability testing and accessibility validation',
         'Design systems & governance',
-        'Cross-functional alignment',
-        'AI-native product development',
         'Rapid prototyping across code and no-code tools',
       ],
     },
@@ -128,8 +123,7 @@ export const about = {
       ],
     },
   ],
-  seeking: 'Seeking design engineering roles where product, design, and engineering judgment equally matter.',
-  contactLine: 'Got questions? Get in touch.',
+  seeking: 'Seeking design engineering roles where I design and ship in the same seat.',
 } as const;
 
 export const projects = [
@@ -138,7 +132,7 @@ export const projects = [
     name: 'Mezo Clay Design System',
     client: 'Mezo / Thesis',
     sector: 'Crypto',
-    year: '2023',
+    year: '2025',
     service: 'Systems',
     readTime: 4,
     image: '/images/portfolio/main3.png',
@@ -198,7 +192,7 @@ export const projects = [
       { name: 'TVL at mainnet peak', description: 'The system shipped with every product surface that contributed to Mezo growth.', value: '$200M+' },
       { name: 'Testnet deposits', description: 'Built on the infrastructure shipped during this engagement.', value: '$322M' },
     ],
-    tags: ['Design systems', 'Crypto', 'WCAG 2.2', 'React', 'Component library'],
+    tags: ['Design System', 'Crypto', 'a11y', 'Storybook', 'Component library'],
     credits: [
       { role: 'Senior Product Designer (Design System)', name: 'Mal Som' },
       { role: 'Engineering', name: 'Thesis engineering' },
@@ -260,7 +254,7 @@ export const projects = [
       { name: 'Monthly revenue', description: 'BlockFi revenue at time of engagement, grown in part through trading volume.', value: '$50M' },
       { name: 'Clients served', description: 'Active BlockFi users at time of mobile trading redesign launch.', value: '225K+' },
     ],
-    tags: ['Lead', 'Fintech', 'Mobile', 'iOS', 'Android', 'Director'],
+    tags: ['Lead', 'Fintech', 'Mobile', 'iOS', 'Android', 'Compliance'],
     credits: [
       { role: 'Design director', name: 'Mal Som' },
       { role: 'Product designers', name: 'BlockFi design team' },
@@ -282,11 +276,11 @@ export const projects = [
     image: '/images/portfolio/blockfi-card-rewards.png',
     featuredSections: [
       {
-        lead: 'Performed as lead product designer for the world’s first Bitcoin rewards credit card — owning the mobile surface: enrollment, card management, and rewards tracking.',
+        lead: 'Lead product designer, mobile, for the world’s first Bitcoin rewards credit card: enrollment, card management, and rewards tracking.',
         richTitle: 'Scope and role',
         body: [
           'Lead designer, mobile, for the BlockFi Rewards Card experience. The card launched nationally in mid-2021 on the Visa network, issued by Evolve Bank & Trust and powered by Deserve’s card platform, converting a ~400K-signup waitlist into an active cardholder base.',
-          'Built the design system and implemented the native experience against a web version — the same components reused across both platforms rather than diverging.',
+          'Built the design system and implemented the native experience against a web version, the same components reused across both platforms rather than diverging.',
         ],
         images: [
           {
@@ -307,8 +301,8 @@ export const projects = [
         lead: '50,000+ active cardholders within 90 days of national launch, spending 450% above the card industry average and pacing toward $2B+ in annualized volume.',
         richTitle: 'Launch and adoption',
         body: [
-          'By December 2021, cardholders had grown past 70,000 — a secondary source (Shorty Awards), cited with lighter confidence than BlockFi’s own release above. Rewards distribution reached 120+ BTC (~$6.8M) as of October 12, 2021 (BlockFi, GlobeNewswire).',
-          'That reuse staved off design debt and created a unified cross-platform experience — one system driving both native and web, not two drifting apart.',
+          'By December 2021, cardholders had grown past 70,000 (Shorty Awards; lighter confidence than BlockFi’s own release above). Rewards distribution reached 120+ BTC (~$6.8M) as of October 12, 2021 (BlockFi, GlobeNewswire).',
+          'That reuse staved off design debt and kept native and web on one system instead of two drifting apart.',
         ],
         images: [
           {
@@ -376,7 +370,7 @@ export const projects = [
         lead: 'The same gesture felt different depending on where you saw it.',
         richTitle: 'Naming the fragmentation',
         body: [
-          'Getting there meant solving a less glamorous problem first. Every editorial format — a cover story, a style guide, a guest edit — needed transitions that felt consistent whether someone hit them on the app or the web. Motion was still a pile of individual files; the same gesture read differently depending on where you encountered it.',
+          'Every editorial format (cover story, style guide, guest edit) needed transitions that felt consistent on app and web. Motion was still a pile of individual files; the same gesture read differently depending on where you encountered it.',
           'An eight-step sprint opened by naming that fragmentation, then mapped every existing motion instance across the product before setting a bar for what a shared system would need to cover.',
         ],
         images: [
@@ -398,7 +392,7 @@ export const projects = [
         lead: 'Timing tokens, then a short list of primitives that compose into any format.',
         richTitle: 'Tokens, primitives, patterns',
         body: [
-          'What shipped: tokens defining raw timing and easing, primitives — sheet, enter/exit, press, swipe-up — defining reusable interaction patterns built from those tokens, and patterns combining primitives into on-screen behaviors editors and engineers could reach for without re-deriving anything. Swipe-up, the gesture that opens a Story full-screen, became the reference example: specified once, used everywhere a story needed to expand.',
+          'What shipped: tokens defining raw timing and easing, primitives (sheet, enter/exit, press, swipe-up) defining reusable interaction patterns built from those tokens, and patterns combining primitives into on-screen behaviors editors and engineers could reach for without re-deriving anything. Swipe-up, the gesture that opens a Story full-screen, became the reference example: specified once, used everywhere a story needed to expand.',
           'Design and engineering stopped trading animation files. A new format now borrows motion from the token layer instead of inventing its own.',
         ],
         images: [
@@ -433,14 +427,14 @@ export const projects = [
         ],
       },
     ],
-    closingLead: 'Stories launched September 14, 2023, across 11 European markets with five recurring formats. The motion system is what let that scale to 500+ stories and 700+ brands without the consistency breaking — the difference between a one-off content experiment and a durable platform.',
+    closingLead: 'Stories launched September 14, 2023, across 11 European markets with five recurring formats. The motion system is what let that scale to 500+ stories and 700+ brands without the consistency breaking.',
     stats: [
       { name: 'Pre-launch reach', description: '80+ curated product drops with Highsnobiety, before Stories had a name.', value: '7M+ users' },
       { name: 'Launch markets', description: 'Austria, Belgium, Denmark, France, Germany, Italy, Netherlands, Spain, Sweden, Switzerland, UK — Sept 14, 2023.', value: '11' },
       { name: 'Formats at launch', description: 'Cover Story, Style Bible, Guest Edit, The Perfect X, Unpacked.', value: '5' },
       { name: 'Scaled to', description: 'Stories published since launch, per Zalando.', value: '500+' },
     ],
-    tags: ['Systems', 'Consumer', 'Motion', 'Design Sprint'],
+    tags: ['Systems', 'B2C', 'Motion', 'Design System'],
     credits: [
       { role: 'Product designer', name: 'Mal Som' },
     ],

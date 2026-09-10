@@ -699,7 +699,12 @@ html[data-mal][data-mal-page='work'] .mal-intro .lead {
   margin: 0;
   max-width: none;
   opacity: 1;
-  color: var(--mal-lead);
+  color: #0a0a0a;
+}
+
+html[data-mal][data-mal-page='work'] .mal-intro .lead-name,
+html[data-mal][data-mal-page='work'] .mal-intro .lead-dash {
+  color: #e00025;
 }
 
 html[data-mal][data-mal-page='work'] .work-feature {

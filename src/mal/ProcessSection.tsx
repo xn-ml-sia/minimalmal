@@ -4,22 +4,22 @@ const STEPS = [
   {
     n: '01',
     title: 'Discover',
-    copy: 'Solve the right problem first — alignment on the evidence, the need, and why it matters to the business.',
+    copy: 'Solve the right problem first: evidence, the need, and why the business cares.',
   },
   {
     n: '02',
     title: 'Explore',
-    copy: 'Artifacts and written context connect hypotheses to human needs and business goals.',
+    copy: 'Flows, prototypes, and written context that tie hypotheses to real users.',
   },
   {
     n: '03',
     title: 'Validate',
-    copy: 'Test at multiple touchpoints so the work addresses users — and, inevitably, the business.',
+    copy: 'Test at multiple touchpoints so the work addresses users and the business.',
   },
   {
     n: '04',
     title: 'Implement',
-    copy: 'Engineers, QA, and cross-functional sign-off — including how we measure design intent.',
+    copy: 'Engineers, QA, and sign-off, including how we measure whether design held.',
   },
 ] as const;
 
@@ -288,8 +288,8 @@ export function ProcessSection() {
           </h2>
           <div className="phx">
             <p className="pd">
-              Widen the aperture before anyone commits to a solution. Then artifacts, tests, and
-              sign-off so design is a measurable driver of the outcome.
+              Look wider before anyone locks a solution. Then artifacts, tests, and
+              sign-off so you can tell whether design held.
             </p>
           </div>
         </div>
