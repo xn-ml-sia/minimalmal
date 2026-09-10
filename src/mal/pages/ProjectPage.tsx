@@ -54,7 +54,7 @@ export function ProjectPage() {
     };
   }, [slug]);
 
-  if (!project) return <Navigate to="/work" replace />;
+  if (!project) return <Navigate to="/" replace />;
 
   const mockupPair = project.mockups.length >= 2;
 
@@ -97,6 +97,30 @@ export function ProjectPage() {
       </section>
 
       <div className="blocks blocks--ctx-project">
+        <div className="block block--safe-area block--bg-light block-featured-rich block-featured-rich--ctx-project">
+          <div className="block-featured-rich__inner">
+            <div className="block-featured-rich__featured">
+              <p>{project.closingLead}</p>
+            </div>
+          </div>
+        </div>
+
+        {project.stats.length > 0 && (
+          <div className="block block--safe-area block--bg-light block-stats">
+            <div className="block-stats__inner">
+              <div className="block-stats__stats">
+                {project.stats.map((stat, i) => (
+                  <div key={i} className="block-stats__stat">
+                    <p className="block-stats__stat-name">{stat.name}</p>
+                    <p className="block-stats__stat-description">{stat.description}</p>
+                    <p className="block-stats__stat-value">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {project.featuredSections.map((section, i) => (
           <div key={i}>
             <div className="block block--safe-area block--bg-light block-featured-rich block-featured-rich--ctx-project">
@@ -232,30 +256,6 @@ export function ProjectPage() {
             </div>
           );
         })}
-
-        <div className="block block--safe-area block--bg-light block-featured-rich block-featured-rich--ctx-project">
-          <div className="block-featured-rich__inner">
-            <div className="block-featured-rich__featured">
-              <p>{project.closingLead}</p>
-            </div>
-          </div>
-        </div>
-
-        {project.stats.length > 0 && (
-          <div className="block block--safe-area block--bg-light block-stats">
-            <div className="block-stats__inner">
-              <div className="block-stats__stats">
-                {project.stats.map((stat, i) => (
-                  <div key={i} className="block-stats__stat">
-                    <p className="block-stats__stat-name">{stat.name}</p>
-                    <p className="block-stats__stat-description">{stat.description}</p>
-                    <p className="block-stats__stat-value">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
       <section className="comp-credits">

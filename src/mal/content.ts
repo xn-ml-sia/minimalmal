@@ -2,25 +2,13 @@ export const EMAIL = 'mallastate@gmail.com';
 export const LINKEDIN = '#';
 
 export const nav = [
-  { name: 'Work', to: '/work' },
+  { name: 'Work', to: '/' },
   { name: 'About', to: '/about' },
 ] as const;
 
 export const work = {
   title: 'Work',
-  intro:
-    'Building interfaces end to end: first sketch to production, and the numbers that followed.',
-  introLines: [
-    'Building interfaces end to end: first sketch',
-    'to production, and the numbers',
-    'that followed.',
-  ],
-  impact: [
-    { org: 'Mezo', value: '2,000+', label: 'component variants' },
-    { org: 'Mezo', value: '$200M+', label: 'TVL at mainnet peak' },
-    { org: 'Edmunds', value: '20%', label: 'higher dealer close rate' },
-    { org: 'Edmunds', value: '6x', label: 'faster dealer response' },
-  ],
+  lead: 'I’m Mal Som — a designer who takes interfaces from first sketch to shipped code, on products where a confusing screen costs someone money or time. But first, here’s some work:',
   items: [
     {
       name: 'Mezo Clay Design System',
@@ -45,9 +33,37 @@ export const work = {
 
 export const about = {
   title: 'About',
-  intro:
-    'I’m Mal Som. I design and build interfaces myself, from the first sketch to the production component, across 0→1 builds and iterative product evolution.',
-  capabilitiesFigure: '/images/portfolio/mock-figure.png',
+  origin: {
+    heading: 'It’s me — Mal Som.',
+    kick: 'About',
+    body: [
+      'I design and build interfaces myself, from the first sketch to the production component. No handoff.',
+      'My recent work has been on products where the UI has to hold up under real complexity: DeFi transaction flows, verifiable-credential identity systems, and a generative AI asset pipeline, screens where getting it wrong costs someone money or time.',
+    ],
+    aside:
+      'Company and client work includes Thesis, Zalando, and Mitte Arts Lab, spanning design systems, motion, accessibility, and generative AI.',
+  },
+  principles: {
+    heading: 'Work with purpose, play with passion.',
+    kick: 'Principles',
+    lead: 'Utility, empathy, and curiosity aren’t values you declare. They’re what you model on the hardest days.',
+    items: [
+      {
+        mood: 'happy',
+        base: '#d8ff00',
+        label: 'Utility',
+        body: '“The utility player doesn’t wait to be handed a position.” Hands-on wherever the work needs it: design, code, the parts of the job that don’t fit neatly under one title. / hands-on, wherever needed',
+      },
+      {
+        mood: 'sad',
+        base: '#3b5bd9',
+        label: 'Empathy',
+        body: '“Lead by example. Empathy as default, not a performance.” The kind of teammate a project actually needs, not just the one with the loudest opinion in the room. / serve the team',
+      },
+    ],
+    curiosity:
+      'Curiosity — “Always reaching for the next tool.” The tools picked up on personal time end up in the work by Monday. / stay curious',
+  },
   capabilities: [
     {
       no: '01',
@@ -78,7 +94,7 @@ export const about = {
     },
     {
       no: '04',
-      name: 'Generative AI · 3 years',
+      name: 'Generative AI · 5 years',
       items: [
         'Stable Diffusion and LoRA fine-tuning for a live marketing-asset pipeline',
         'Published research on bias in AI training data (NeurIPS 2020, 2021)',
@@ -112,66 +128,6 @@ export const about = {
       ],
     },
   ],
-  process: [
-    {
-      name: 'Discover',
-      copy: 'Discovery determines whether a team is solving the right problem before anyone commits to a solution. Widen the aperture before narrowing toward anything buildable. The output is alignment on the problem, the evidence needed, and why it matters to the business.',
-      image: '/images/process/agency-01-9b4387d5aa.webp',
-      methods: [
-        'Customer feedback',
-        'Quant data analysis',
-        'Lived observations',
-        'Surveys & questionnaires',
-        'Business analysis',
-        'Interviews',
-        'Market research',
-        'Session replay',
-        'Goal & signal statements',
-        'Hypothesis generation',
-      ],
-    },
-    {
-      name: 'Explore',
-      copy: 'With the evidential problem in sight, artifacts and written context align stakeholders — connecting hypotheses and objectives to human needs and business goals.',
-      image: '/images/process/agency-05-6ff4e85875.webp',
-      methods: ['Diagram', 'Journey map', 'Wireframe', 'Prompt design & prototyping'],
-    },
-    {
-      name: 'Validate',
-      copy: 'Validation can occur at multiple touchpoints with an array of artifacts, ensuring the work addresses the needs of users — and, ultimately, the business.',
-      image: '/images/process/agency-06-c2c1790069.webp',
-      methods: [
-        'Card sorting',
-        'Design reviews',
-        'Usability testing',
-        'Error rate analysis',
-        'Business analysis',
-        'Interviews',
-        'Market research',
-        'Session replay',
-        'Goal & signal statements',
-        'Hypothesis generation',
-      ],
-    },
-    {
-      name: 'Implement',
-      copy: 'Collaborate closely with engineers for design alignment and capture details pre-release. For new components, ensure awareness for product consistency. Cross-functional stakeholders are informed via Loom and case-study briefs before final sign-off — including how we measure design intent.',
-      image: '/images/process/agency-07-a0986e9d3f.webp',
-      methods: [
-        'Feasibility sign-off',
-        'Compliance sign-off',
-        'Business sign-off',
-        'Design QA',
-        'Content sign-off',
-        'Accessibility checklist',
-        'Design-systems check-in',
-        'Design guidelines',
-        'Criteria sign-off',
-        'Cross-functional review',
-      ],
-    },
-  ],
-  clients: ['Thesis*', 'Mezo', 'Zalando', 'Mitte Arts Lab', 'Snap', 'Edmunds.com', 'Fantasmo.io', 'Gannett | USA Today Network'],
   seeking: 'Seeking design engineering roles where product, design, and engineering judgment equally matter.',
   contactLine: 'Got questions? Get in touch.',
 } as const;

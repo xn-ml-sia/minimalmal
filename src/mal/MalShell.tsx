@@ -1,8 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Nav } from './Nav';
-import './styles/home-root.css';
-import './styles/home.css';
 import './styles/inner.css';
 import './styles/inner-home.css';
 import './styles/pages.css';
@@ -11,8 +9,7 @@ import './styles/mal.css';
 function malPage(pathname: string) {
   if (pathname.includes('/about')) return 'about';
   if (/\/work\/.+/.test(pathname)) return 'work-detail';
-  if (pathname.includes('/work')) return 'work';
-  return 'home';
+  return 'work';
 }
 
 function setFavicon(href: string) {
@@ -47,11 +44,7 @@ export function MalShell() {
     root.classList.add('fonts-loaded');
     const previousTitle = document.title;
     document.title =
-      page === 'about'
-        ? 'About — Mal Som'
-        : page === 'work' || page === 'work-detail'
-          ? 'Work — Mal Som'
-          : 'Mal Som';
+      page === 'about' ? 'About — Mal Som' : 'Work — Mal Som';
     const restoreIcon = setFavicon('/favicon.svg');
     return () => {
       delete root.dataset.mal;
@@ -93,17 +86,11 @@ export function MalShell() {
   return (
     <div className={`mal-root is-${page}`}>
       <Nav />
-      {page === 'home' ? (
-        <div className="mal-home-root">
+      <div className="mal-inner-root">
+        <main>
           <Outlet />
-        </div>
-      ) : (
-        <div className="mal-inner-root">
-          <main>
-            <Outlet />
-          </main>
-        </div>
-      )}
+        </main>
+      </div>
     </div>
   );
 }
