@@ -4,11 +4,16 @@ import { projects } from '../content';
 import { Contact } from '../Contact';
 import { Picture } from '../Picture';
 import { FigureStripes } from '../FigureStripes';
+import { MediaCarousel } from '../MediaCarousel';
 
 type MediaAsset = { type: 'image' | 'video'; src: string };
 type CoverDevice = MediaAsset & { device?: boolean };
 type SectionCover = { background: string; overlays?: readonly CoverDevice[]; overlay?: CoverDevice };
-type SectionWithExtras = { cover?: SectionCover; media?: MediaAsset };
+type SectionWithExtras = {
+  cover?: SectionCover;
+  media?: MediaAsset;
+  carousel?: readonly string[];
+};
 
 function coverDevices(cover: {
   overlays?: readonly CoverDevice[];
@@ -141,6 +146,13 @@ export function ProjectPage() {
                   );
                 })}
               </div>
+            )}
+
+            {(section as SectionWithExtras).carousel && (
+              <MediaCarousel
+                images={(section as SectionWithExtras).carousel!}
+                className={`block-media-carousel--${project.slug}`}
+              />
             )}
 
             {(section as SectionWithExtras).media && (

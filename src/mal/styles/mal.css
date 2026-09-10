@@ -950,7 +950,7 @@ html[data-mal] .block-media--mezo-clay .picture {
   aspect-ratio: auto;
   height: auto;
   background: #efefef;
-  border: 1px solid #dcdcdc;
+  border: 0;
   align-self: start;
 }
 
@@ -1025,10 +1025,19 @@ html[data-mal] .block-media--mezo-clay .block-media__item--video .project-media_
   object-fit: contain;
   display: block;
   background: transparent;
-  border: 1px solid #dcdcdc;
+  border: 0;
   border-radius: 0.25rem;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Half the previous Changelog frame height; crop the Storybook video to fit. */
+html[data-mal] .block-media--mezo-clay.block-media--cols-2:has(.block-media__item--video) .block-media__item--video .project-media__video {
+  aspect-ratio: 925 / 889;
+  height: auto;
+  object-fit: cover;
+  object-position: left top;
+  background: #efefef;
 }
 
 /* When a Mezo 2-up pairs a video with a still, equal columns + match still to video height. */
@@ -1112,8 +1121,123 @@ html[data-mal] .block-mockups__mockup .picture img {
 
 /* ── Cover / split / bleed media ────────────────────────── */
 
-html[data-mal] .block-media-cover,
-html[data-mal] .block-media-split,
+/* ── Spec carousel (Mezo Clay) ──────────────────────────── */
+
+html[data-mal] .block-media-carousel {
+  padding: 0;
+  max-width: 100%;
+}
+
+html[data-mal] .block-media-carousel__viewport {
+  overflow: hidden;
+  padding: 0 var(--safe-area);
+}
+
+html[data-mal] .block-media-carousel__track {
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  animation: mal-carousel-scroll 80s linear infinite;
+  will-change: transform;
+}
+
+html[data-mal] .block-media-carousel:hover .block-media-carousel__track,
+html[data-mal] .block-media-carousel[data-paused='true'] .block-media-carousel__track {
+  animation-play-state: paused;
+}
+
+@keyframes mal-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - (var(--gap) / 2)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-mal] .block-media-carousel__viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  html[data-mal] .block-media-carousel__viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  html[data-mal] .block-media-carousel__track {
+    animation: none;
+  }
+}
+
+html[data-mal] .block-media-carousel__slide {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 400px;
+  width: 400px;
+  height: 420px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: #efefef;
+  box-sizing: border-box;
+  cursor: zoom-in;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  color: inherit;
+  pointer-events: auto;
+}
+
+html[data-mal] .block-media-carousel__slide .picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  pointer-events: none;
+}
+
+html[data-mal] .block-media-carousel__slide .picture__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+html[data-mal] .block-media-carousel__lightbox,
+.block-media-carousel__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: rgb(15 15 15 / 0.82);
+  cursor: zoom-out;
+}
+
+html[data-mal] .block-media-carousel__lightbox-img,
+.block-media-carousel__lightbox-img {
+  display: block;
+  max-width: min(92vw, 1100px);
+  max-height: calc(100vh - 3rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.35);
+  cursor: zoom-out;
+}
+
 html[data-mal] .block-media-bleed {
   padding: 0;
   max-width: 100%;
