@@ -343,6 +343,10 @@ html[data-mal][data-mal-page='about'] .mal-ed h2 {
   color: var(--mal-lead);
 }
 
+html[data-mal][data-mal-page='about'] .mal-ed h2 .lead-name {
+  font-style: italic;
+}
+
 html[data-mal][data-mal-page='about'] .mal-ed p {
   font-size: clamp(15px, 1.15vw, 18px);
   line-height: 1.62;
@@ -457,12 +461,6 @@ html[data-mal][data-mal-page='about'] .mal-ed .sm-heart {
   }
 }
 
-html[data-mal][data-mal-page='about'] .mal-ed p.principles-foot {
-  margin-top: 1.2em;
-  font-size: clamp(15px, 1.15vw, 18px);
-  color: #2a2a2a;
-}
-
 html[data-mal][data-media-blocks] .video-player__video {
   background-color: var(--media-block, #3b5bd9);
 }
@@ -505,16 +503,25 @@ html[data-mal][data-mal-page='work'] .mal-intro {
   --muted: #8b8b8b;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+  isolation: isolate;
   padding: calc(var(--cell) * 7) var(--gutter) calc(var(--cell) * 3);
   color: #0a0a0a;
   font-family: var(--font-primary), sans-serif;
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
-  background-image: url('/images/patterns/gingham-green.svg');
-  background-size: calc(var(--cell) * 2) calc(var(--cell) * 2);
-  background-repeat: repeat;
+  background-color: #f9f8f5;
+}
+
+html[data-mal][data-mal-page='work'] .mal-intro__cloth {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 @media (max-width: 680px) {
@@ -525,6 +532,8 @@ html[data-mal][data-mal-page='work'] .mal-intro {
 }
 
 html[data-mal][data-mal-page='work'] .mal-intro .wrap {
+  position: relative;
+  z-index: 1;
   max-width: var(--maxw);
   margin: 0 auto;
 }
@@ -540,7 +549,16 @@ html[data-mal][data-mal-page='work'] .mal-intro .lead {
   color: #0a0a0a;
 }
 
-html[data-mal][data-mal-page='work'] .mal-intro .lead-name,
+html[data-mal][data-mal-page='work'] .mal-intro .lead-name {
+  color: #090909;
+  font-style: italic;
+}
+
+html[data-mal][data-mal-page='work'] .mal-intro .lead-em,
+html[data-mal][data-mal-page='work'] .mal-proc .ph h2 .lead-em {
+  font-style: italic;
+}
+
 html[data-mal][data-mal-page='work'] .mal-intro .lead-dash {
   color: #e00025;
 }
@@ -623,7 +641,7 @@ html[data-mal][data-mal-page='work'] .mal-proc .ph h2 {
   letter-spacing: -0.02em;
   font-weight: 400;
   margin: 0;
-  color: var(--mal-lead);
+  color: #090909;
 }
 
 html[data-mal][data-mal-page='work'] .mal-proc .ph .pd {

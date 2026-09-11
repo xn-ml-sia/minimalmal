@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { work, projects } from '../content';
 import { Contact } from '../Contact';
 import { FigureStripes } from '../FigureStripes';
+import { GinghamCloth } from '../GinghamCloth';
 import { ProcessSection } from '../ProcessSection';
 
 export function WorkPage() {
@@ -10,13 +11,18 @@ export function WorkPage() {
       <h1 className="sr-only">{work.title}</h1>
 
       <section className="intro mal-intro">
+        <GinghamCloth />
         <div className="wrap">
           <p className="lead ready">
             I’m <span className="lead-name"><span className="mal-m" aria-hidden="true" />al Som</span>{' '}
             <span className="lead-dash">—</span> a designer who takes interfaces
             from first sketch to shipped code, on products where a confusing
-            screen costs someone <span className="mal-m" aria-hidden="true" />
-            oney or time.
+            screen costs someone{' '}
+            <span className="lead-em">
+              <span className="mal-m" aria-hidden="true" />
+              oney
+            </span>{' '}
+            or time.
           </p>
         </div>
       </section>

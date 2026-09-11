@@ -199,10 +199,12 @@ function startProcflow(canvas: HTMLCanvasElement, stepsRoot: HTMLElement) {
     for (let s = 0; s < 2; s++) {
       const ph0 = s * Math.PI;
       for (let i = 0; i < markers; i++) {
-        const u = (i / markers + clock * 0.0013) % 1;
+        // Each side travels toward the middle: left 0→0.5, right 1→0.5.
+        const p = (i / markers + clock * 0.002) % 1;
+        const u = s === 0 ? p * 0.5 : 1 - p * 0.5;
         const rk = R * prof(u);
-        const chaos = Math.pow(1 - u, 1.05);
-        const ang = u * turns * 6.2832 + ph0 + (rnd(i * 3.1 + s * 40) - 0.5) * 2.9 * chaos;
+        const chaos = Math.pow(1 - p, 1.05);
+        const ang = p * turns * 6.2832 + ph0 + (rnd(i * 3.1 + s * 40) - 0.5) * 2.9 * chaos;
         const jr = rk * (1 + (rnd(i * 7.7 + s * 9) - 0.5) * 1.9 * chaos);
         const za = Math.cos(ang) * jr;
         const ya = Math.sin(ang) * jr;
@@ -217,23 +219,26 @@ function startProcflow(canvas: HTMLCanvasElement, stepsRoot: HTMLElement) {
       }
     }
 
-    for (let uu = 0; uu < 1; uu += 0.04) {
-      const u2 = (uu + clock * 0.0013) % 1;
-      if (u2 < 0.5) continue;
-      const rk2 = R * prof(u2);
-      const ang2 = u2 * turns * 6.2832;
-      for (let w = 0; w <= 1.001; w += 0.12) {
-        const f2 = 1 - 2 * w;
-        const za2 = Math.cos(ang2) * rk2 * f2;
-        const ya2 = Math.sin(ang2) * rk2 * f2;
-        const depth2 = dep(za2, rk2);
-        push({
-          sx: u2 * width + za2 * 0.34,
-          sy: cy + ya2 * 0.92,
-          d: depth2 - 0.01,
-          col: mix('#ffffff', BLUE, 0.3 + 0.5 * depth2),
-          a: aOf(u2),
-        });
+    // Ribbons: red from the left, blue from the right, converging at center.
+    for (let side = 0; side < 2; side++) {
+      for (let uu = 0; uu < 1; uu += 0.04) {
+        const p = (uu + clock * 0.002) % 1;
+        const u2 = side === 0 ? p * 0.5 : 1 - p * 0.5;
+        const rk2 = R * prof(u2);
+        const ang2 = p * turns * 6.2832 + side * Math.PI;
+        for (let w = 0; w <= 1.001; w += 0.12) {
+          const f2 = 1 - 2 * w;
+          const za2 = Math.cos(ang2) * rk2 * f2;
+          const ya2 = Math.sin(ang2) * rk2 * f2;
+          const depth2 = dep(za2, rk2);
+          push({
+            sx: u2 * width + za2 * 0.34,
+            sy: cy + ya2 * 0.92,
+            d: depth2 - 0.01,
+            col: mix('#ffffff', side === 0 ? RED : BLUE, 0.3 + 0.5 * depth2),
+            a: aOf(u2),
+          });
+        }
       }
     }
 
@@ -284,8 +289,11 @@ export function ProcessSection() {
           <h2>
             Discover. Explore.
             <br />
-            Validate. <span className="mal-i" aria-hidden="true" />
-            mplement.
+            Validate.{' '}
+            <span className="lead-em">
+              <span className="mal-i" aria-hidden="true" />
+              mplement.
+            </span>
           </h2>
           <div className="phx">
             <p className="pd">

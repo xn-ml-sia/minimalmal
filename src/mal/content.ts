@@ -37,26 +37,6 @@ export const about = {
     aside:
       'Company and client work includes Thesis, Zalando, and Mitte Arts Lab, spanning design systems, motion, accessibility, and generative AI.',
   },
-  principles: {
-    heading: 'Design with purpose. Keep playing with tools.',
-    lead: 'You model utility, empathy, and curiosity on the hardest days.',
-    items: [
-      {
-        mood: 'happy',
-        base: '#d8ff00',
-        label: 'Utility',
-        body: '“The utility player doesn’t wait to be handed a position.” Hands-on in design, code, and whatever else the job needs.',
-      },
-      {
-        mood: 'sad',
-        base: '#3b5bd9',
-        label: 'Empathy',
-        body: '“Lead by example. Empathy as default, not a performance.” Be the teammate the project needs.',
-      },
-    ],
-    curiosity:
-      'Curiosity. “Always reaching for the next tool.” Tools I pick up on personal time show up in the work by Monday.',
-  },
   capabilities: [
     {
       no: '01',

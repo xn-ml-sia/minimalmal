@@ -1,6 +1,5 @@
 import { about } from '../content';
 import { Contact } from '../Contact';
-import { PrinciplesSection } from '../PrinciplesSection';
 
 export function AboutPage() {
   return (
@@ -11,8 +10,11 @@ export function AboutPage() {
         <div className="wrap">
           <div className="head">
             <h2>
-              It’s me. <span className="mal-m" aria-hidden="true" />
-              al Som.
+              It’s me.{' '}
+              <span className="lead-name">
+                <span className="mal-m" aria-hidden="true" />
+                al Som.
+              </span>
             </h2>
           </div>
           <div>
@@ -23,8 +25,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-
-      <PrinciplesSection />
 
       <section className="block block-grid-lists block--safe-area">
         <div className="block-grid-lists__inner">
