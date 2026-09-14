@@ -15,15 +15,15 @@ export const work = {
       image: '/images/portfolio/main3.png',
     },
     {
+      name: 'Zalando Stories',
+      desc: 'Transition tokens and Reduced Motion fallbacks, replacing a patchwork of one-off animations across the platform.',
+      image: '/images/portfolio/zalando-main.png',
+    },
+    {
       name: 'BlockFi — Credit Card Rewards (Mobile)',
       desc: 'Lead designer, mobile. 50,000+ cardholders in 90 days.',
       image: '/images/portfolio/blockfi-card-rewards.png',
     },
-    {
-      name: 'Zalando Stories',
-      desc: 'Transition tokens and Reduced Motion fallbacks, replacing a patchwork of one-off animations across the platform.',
-      image: '/images/portfolio/zalando-main.png',
-    }
   ],
 } as const;
 

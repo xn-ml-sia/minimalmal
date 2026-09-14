@@ -365,6 +365,39 @@ html[data-mal][data-mal-page='about'] .mal-ed p.s {
   font-size: 14px;
 }
 
+html[data-mal][data-mal-page='about'] .mal-ed__caps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--cell) * 2.5);
+  margin-top: calc(var(--cell) * 3.5);
+}
+
+html[data-mal][data-mal-page='about'] .mal-ed__cap-title {
+  margin: 0 0 0.65em;
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+html[data-mal][data-mal-page='about'] .mal-ed__cap-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+html[data-mal][data-mal-page='about'] .mal-ed__cap-list li {
+  margin: 0;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.55;
+  color: #2a2a2a;
+}
+
+html[data-mal][data-mal-page='about'] .mal-ed__cap-list li + li {
+  margin-top: 0.35em;
+}
+
 html[data-mal][data-mal-page='about'] .mal-ed .mono {
   font-family: var(--mono);
   font-size: 11px;
@@ -589,6 +622,59 @@ html[data-mal][data-mal-page='work'] .work-feature {
   background: transparent;
 }
 
+html[data-mal][data-mal-page='work'] .work-feature .list-article.list-article--mode-default {
+  padding-bottom: var(--s4);
+}
+
+@media screen and (min-width: 992px) {
+  html[data-mal][data-mal-page='work'] .work-feature .list-article.list-article--mode-default {
+    padding-bottom: var(--s5);
+  }
+}
+
+/* Keep all work cards equal size — vendor makes the first card full-bleed. */
+@media screen and (min-width: 768px) {
+  html[data-mal][data-mal-page='work']
+    .list-article.list-article--mode-default:not(.list-article--filtered)
+    > *:first-child,
+  html[data-mal][data-mal-page='work']
+    .list-article.list-article--mode-default:not(.list-article--filtered)
+    > *:nth-child(8n + 1) {
+    grid-column: span 6;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html[data-mal][data-mal-page='work']
+    .list-article.list-article--mode-default:not(.list-article--filtered)
+    > *:first-child,
+  html[data-mal][data-mal-page='work']
+    .list-article.list-article--mode-default:not(.list-article--filtered)
+    > *:nth-child(8n + 1) {
+    grid-column: span 4;
+  }
+}
+
+html[data-mal][data-mal-page='work'] .list-article .article__figure {
+  --figure-aspect-ratio: 2880 / 2048;
+  aspect-ratio: 2880 / 2048;
+  width: 100%;
+}
+
+html[data-mal][data-mal-page='work'] .list-article .article__figure .figure-stripes__base,
+html[data-mal][data-mal-page='work'] .list-article .article__figure .picture {
+  --aspect-ratio: 2880 / 2048;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+html[data-mal][data-mal-page='work'] .list-article .article__figure .picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Home process section, reused on Work */
 html[data-mal][data-mal-page='work'] .mal-proc {
   --cell: 14px;
@@ -597,8 +683,8 @@ html[data-mal][data-mal-page='work'] .mal-proc {
   --mono: 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
   position: relative;
   z-index: 2;
-  padding: calc(var(--cell) * 7) var(--gutter);
-  margin-top: calc(var(--cell) * 2);
+  padding: calc(var(--cell) * 3) var(--gutter) calc(var(--cell) * 7);
+  margin-top: 0;
   color: #0a0a0a;
   font-family: var(--font-primary), sans-serif;
   font-weight: 400;
@@ -611,7 +697,7 @@ html[data-mal][data-mal-page='work'] .mal-proc {
 @media (max-width: 680px) {
   html[data-mal][data-mal-page='work'] .mal-proc {
     --gutter: 28px;
-    padding: calc(var(--cell) * 4) var(--gutter);
+    padding: calc(var(--cell) * 2) var(--gutter) calc(var(--cell) * 4);
   }
 }
 

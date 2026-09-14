@@ -17,30 +17,24 @@ export function AboutPage() {
               </span>
             </h2>
           </div>
-          <div>
+          <div className="mal-ed__main">
             {about.origin.body.map((para) => (
               <p key={para}>{para}</p>
             ))}
             <p className="s">{about.origin.aside}</p>
-          </div>
-        </div>
-      </section>
 
-      <section className="block block-grid-lists block--safe-area">
-        <div className="block-grid-lists__inner">
-          <div className="block-grid-lists__lists">
-            {about.capabilities.map((cap) => (
-              <article key={cap.no} className="block-grid-lists__list">
-                <header className="block-grid-lists__list-header">
-                  <h3 className="heading heading--base">{cap.name}</h3>
-                </header>
-                <ul className="block-grid-lists__list-ul">
-                  {cap.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+            <div className="mal-ed__caps">
+              {about.capabilities.map((cap) => (
+                <article key={cap.no} className="mal-ed__cap">
+                  <h3 className="mal-ed__cap-title">{cap.name}</h3>
+                  <ul className="mal-ed__cap-list">
+                    {cap.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
