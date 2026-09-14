@@ -592,6 +592,10 @@ html[data-mal][data-mal-page='work'] .mal-proc .ph h2 .lead-em {
   font-style: italic;
 }
 
+html[data-mal][data-mal-page='work'] .mal-proc .ph h2 .lead-em {
+  color: var(--mal-lead);
+}
+
 html[data-mal][data-mal-page='work'] .mal-intro .lead-dash {
   color: #e00025;
 }

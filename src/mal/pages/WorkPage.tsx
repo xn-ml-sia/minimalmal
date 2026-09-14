@@ -18,10 +18,7 @@ export function WorkPage() {
             <span className="lead-dash">—</span> a designer who takes interfaces
             from first sketch to shipped code, on products where a confusing
             screen costs someone{' '}
-            <span className="lead-em">
-              <span className="mal-m" aria-hidden="true" />
-              oney
-            </span>{' '}
+            <span className="lead-em">money</span>{' '}
             or time.
           </p>
         </div>
