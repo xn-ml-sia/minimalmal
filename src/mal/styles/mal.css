@@ -555,6 +555,18 @@ html[data-mal][data-mal-page='work'] .mal-intro__cloth {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 @media (max-width: 680px) {
@@ -1046,6 +1058,16 @@ html[data-mal] .hero-project__services li + li {
   margin-top: 0.2em;
 }
 
+html[data-mal] .hero-project__services a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+html[data-mal] .hero-project__services a:hover {
+  opacity: 0.75;
+}
+
 /* ── Featured pair (section 1) ──────────────────────────── */
 
 html[data-mal] .block-featured-pair {
@@ -1168,6 +1190,17 @@ html[data-mal] .block-media--cols-2 {
 
 html[data-mal] .block-media__item {
   grid-column: var(--item-grid-column);
+}
+
+html[data-mal] a.block-media__item--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+html[data-mal] a.block-media__item--link:hover {
+  opacity: 0.92;
 }
 
 html[data-mal] .block-media__item .picture {

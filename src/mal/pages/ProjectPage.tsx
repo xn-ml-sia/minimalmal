@@ -112,9 +112,21 @@ export function ProjectPage() {
             <div className="hero-project__services-readtime">
               <div className="hero-project__services">
                 <ul>
-                  {project.tags.map((tag) => (
-                    <li key={tag}>{tag}</li>
-                  ))}
+                  {project.tags.map((tag) => {
+                    const label = typeof tag === 'string' ? tag : tag.label;
+                    const href = typeof tag === 'string' ? undefined : tag.href;
+                    return (
+                      <li key={label}>
+                        {href ? (
+                          <a href={href} target="_blank" rel="noopener noreferrer">
+                            {label}
+                          </a>
+                        ) : (
+                          label
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="hero-project__readtime">
@@ -174,13 +186,11 @@ export function ProjectPage() {
               >
                 {section.images.map((item, ii) => {
                   const src = typeof item === 'string' ? item : item.src;
-                  const overlay = typeof item === 'string' ? undefined : item.overlay;
+                  const overlay = typeof item === 'string' ? undefined : 'overlay' in item ? item.overlay : undefined;
+                  const href = typeof item === 'string' ? undefined : 'href' in item ? item.href : undefined;
                   const isVideo = /\.(webm|mp4)$/i.test(src);
-                  return (
-                    <div
-                      key={ii}
-                      className={`media block-media__item${overlay ? ' block-media__item--overlay' : ''}${isVideo ? ' block-media__item--video' : ''}`}
-                    >
+                  const media = (
+                    <>
                       {isVideo ? (
                         <ProjectMedia type="video" src={src} />
                       ) : (
@@ -195,6 +205,24 @@ export function ProjectPage() {
                           )}
                         </div>
                       )}
+                    </>
+                  );
+                  return href ? (
+                    <a
+                      key={ii}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`media block-media__item block-media__item--link${overlay ? ' block-media__item--overlay' : ''}${isVideo ? ' block-media__item--video' : ''}`}
+                    >
+                      {media}
+                    </a>
+                  ) : (
+                    <div
+                      key={ii}
+                      className={`media block-media__item${overlay ? ' block-media__item--overlay' : ''}${isVideo ? ' block-media__item--video' : ''}`}
+                    >
+                      {media}
                     </div>
                   );
                 })}

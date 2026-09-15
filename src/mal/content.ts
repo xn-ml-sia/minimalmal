@@ -136,7 +136,10 @@ export const projects = [
         ],
         images: [
           '/images/portfolio/storybook-clay.webm',
-          '/images/portfolio/mezo-clay/Changelog.png',
+          {
+            src: '/images/portfolio/mezo-clay/Changelog.png',
+            href: 'https://www.figma.com/design/NkJ3WrSoGghNaJmOcSPkun/%E2%9D%96-Mezo-Clay-Component-Library--DS-only-?node-id=24554-274533&t=VoOGXUtlBzkfC5Z3-4',
+          },
         ],
       },
       {
@@ -254,7 +257,17 @@ export const projects = [
       { name: 'Annualized spend pace', description: 'Pacing figure disclosed alongside the 90-day cardholder count (BlockFi, Oct 2021).', value: '$2B+' },
       { name: 'Rewards distributed', description: '≈$6.8M in BTC as of Oct 12, 2021 (BlockFi, GlobeNewswire).', value: '120+ BTC' },
     ],
-    tags: ['Lead', 'Fintech', 'Mobile', 'Credit Card', 'iOS', 'Android'],
+    tags: [
+      'Lead',
+      'Fintech',
+      'Mobile',
+      {
+        label: 'Credit Card',
+        href: 'https://www.figma.com/design/8zEYM5yk2V97RGpqK6gY4c/Directory?node-id=222-147&t=sEvHGeYOr8aiShUu-1',
+      },
+      'iOS',
+      'Android',
+    ],
     credits: [
       { role: 'Lead designer, mobile', name: 'Mal Som' },
       { role: 'Engineering', name: 'Apps team' },
@@ -341,7 +354,15 @@ export const projects = [
       { name: 'Formats at launch', description: 'Cover Story, Style Bible, Guest Edit, The Perfect X, Unpacked.', value: '5' },
       { name: 'Scaled to', description: 'Stories published since launch, per Zalando.', value: '500+' },
     ],
-    tags: ['Systems', 'B2C', 'Motion', 'Design System'],
+    tags: [
+      'Systems',
+      'B2C',
+      {
+        label: 'Motion',
+        href: 'https://www.figma.com/proto/kK0M4H9RO88Oci10JjaZ6w/Art-Direction-_-Delight-%26-Motion-Explorations?page-id=335%3A841&node-id=419-667&node-type=frame&viewport=1734%2C-1816%2C0.23&t=MOQBaZsqhrs8cWhn-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=419%3A667',
+      },
+      'Design System',
+    ],
     credits: [
       { role: 'Product designer', name: 'Mal Som' },
       { role: 'Engineering', name: 'ZDS engineers' },
