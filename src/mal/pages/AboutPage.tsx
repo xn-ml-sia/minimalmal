@@ -1,5 +1,4 @@
 import { about } from '../content';
-import { Contact } from '../Contact';
 
 export function AboutPage() {
   return (
@@ -38,8 +37,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-
-      <Contact />
     </div>
   );
 }
