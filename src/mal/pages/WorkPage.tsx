@@ -4,6 +4,7 @@ import { Contact } from '../Contact';
 import { FigureStripes } from '../FigureStripes';
 import { GinghamCloth } from '../GinghamCloth';
 import { ProcessSection } from '../ProcessSection';
+import { Showreel } from '../Showreel';
 
 export function WorkPage() {
   return (
@@ -21,6 +22,7 @@ export function WorkPage() {
             <span className="lead-em">money</span>{' '}
             or time.
           </p>
+          <Showreel />
         </div>
       </section>
 
